@@ -8,10 +8,10 @@ package com.bm.api;
  * http://112.64.173.178/huafa/app/userUnRead/getAllUnreadCount.do
  */
 public class BaseApi {
-	
 
-	public static final String API_HOST = "http://v250.tzj.softlst.com:8888";//正式服务器
-//	public static final String API_HOST = "http://59.110.62.10:8888";//测试服务器
+
+	//public static final String API_HOST = "http://v250.tzj.softlst.com:8888";//正式服务器
+	public static final String API_HOST = "http://59.110.62.10:8888";//测试服务器
 	//public static final String API_HOST = "http://192.168.0.107:8888";//测试服务器
 //	public static final String API_HOST = "http://47.93.84.236:8888";//测试服务器
 
@@ -81,18 +81,18 @@ public class BaseApi {
 	 *
 	 *获取验证码
 	 */
-	public static final String API_TZJCAS_SENDCODE="tzjcas/sendcode.do";
+	public static final String API_TZJCAS_SENDCODE="casUser/sendcode.do";
 	
 	/**
 	 *
 	 *重置密码
 	 */
-	public static final String API_TZJCAS_UPDATEPASS= "tzjcas/updatepass.do";
+	public static final String API_TZJCAS_UPDATEPASS= "casUser/updatepass.do";
 	/**
 	 *
 	 *验证手机号和验证码
 	 */
-	public static final String API_TZJCAS_CHECKCODE= "tzjcas/checkcode.do";
+	public static final String API_TZJCAS_CHECKCODE= "casUser/checkcode.do";
 	/**
 	 *
 	 *教练注册   
@@ -118,12 +118,12 @@ public class BaseApi {
 	 *
 	 *查询最近访问城市
 	 */
-	public static final String API_GET_LASTCITY="tzjcas/getlastcity.do";
+	public static final String API_GET_LASTCITY="casUser/getlastcity.do";
 	/**
 	 *
 	 *更新最近访问城市
 	 */
-	public static final String API_UPDATE_LASTCITY="tzjcas/updatelastcity.do";
+	public static final String API_UPDATE_LASTCITY="casUser/updatelastcity.do";
 	
 	/**
 	 *
@@ -221,9 +221,9 @@ public class BaseApi {
 //	public static final String API_TZJCOACH_REGISTERCOACH="tzjcoach/registerCoach.do";
 	/**
 	 *
-	 *
+	 *已作废
 	 */
-	public static final String API_TZJORDER_COACHORDERLIST="tzjorder/coachBalancelist.do";
+	public static final String API_TZJORDER_COACHORDERLIST="btsOrderInfo/coachBalancelist.do";
 	/**
 	 *
 	 *
@@ -240,7 +240,7 @@ public class BaseApi {
 	 */
 	public static final String API_BANK_DELBANK="bank/delBank.do";
 	/**
-	 *提现
+	 *提现 已作废
 	 *
 	 */
 	public static final String API_BANK_ADDDEDUCT="bank/addDeduct";
@@ -248,7 +248,7 @@ public class BaseApi {
 	 *
 	 *更新密码接口
 	 */
-	public static final String API_TZJACCOUNT_UPDATEPASSWORD="tzjcas/updatepassword.do";
+	public static final String API_TZJACCOUNT_UPDATEPASSWORD="casUser/updatepassword.do";
 	/**
 	 *
 	 *意见反馈
@@ -258,7 +258,7 @@ public class BaseApi {
 	 *
 	 *消息查询
 	 */
-	public static final String API_TZJMESSAGE_MESSAGELIST="tzjmessage/messagelist.do";
+	public static final String API_TZJMESSAGE_MESSAGELIST="tzjmessage/messageCoachList.do";
 	/**
 	 *
 	 *消息详情

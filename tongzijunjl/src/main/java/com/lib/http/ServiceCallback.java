@@ -11,7 +11,8 @@ import java.lang.reflect.Type;
  * @param <T>
  */
 public abstract class ServiceCallback<T>{
-    public Type type;  
+    public Type type;
+    public String url;
     public ServiceCallback(){  
         Type mySuperClass = getClass().getGenericSuperclass();  
         Type type = ((ParameterizedType)mySuperClass).getActualTypeArguments()[0];  

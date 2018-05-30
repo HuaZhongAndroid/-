@@ -82,6 +82,7 @@ public class AsyncHttpHelp {
 	    final	AsyncHttpClient client = new AsyncHttpClient();
 		client.setTimeout(30*1000);
 		client.setSSLSocketFactory(getSSL());
+		callback.url = logStr;
 		if(context  ==  null){
 			client.get( urlStr, getReponHandler(callback));
 		}else{
@@ -113,12 +114,13 @@ public class AsyncHttpHelp {
 				}
 				params.put(fileName, filess);
 			} 
-			Lg.i("url:", logStr);
+			Lg.e("url:", logStr);
 //		} catch (UnsupportedEncodingException e) {
 //			e.printStackTrace();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		callback.url = logStr;
 		client.post(context, url, params, getReponHandler(callback));
 
 	}
@@ -136,7 +138,7 @@ public class AsyncHttpHelp {
 			@Override
 			public void onFailure(int arg0, Header[] arg1, String arg2,
 					Throwable arg3) {
-				Log.d("fff", "网络请求失败 "+arg2);
+				Log.e("error", "网络请求失败 url = "+callback.url+"  error"+arg2);
 				arg3.printStackTrace();
 				App.toast("网络请求失败");
 			}
@@ -146,6 +148,7 @@ public class AsyncHttpHelp {
 				System.out.println("返回结果:" + arg2);
 				BaseResult r = null;
 				try {
+					Log.e("onSuccess", " url = "+callback.url+"  \n"+arg2);
 					r = getGson().fromJson(arg2, callback.type);
 				} catch (Exception e) {
 					e.printStackTrace();
