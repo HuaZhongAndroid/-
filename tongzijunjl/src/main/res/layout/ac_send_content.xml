@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    android:id="@+id/ll_send_parent"
+    android:padding="15dip" >
+
+    <TextView
+        style="@style/ww"
+        android:layout_marginTop="5dip"
+        android:text="内容"
+        android:textColor="@color/txt_name"
+        android:textSize="@dimen/text_font_15" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="fill_parent"
+        android:layout_height="100dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/send_box"
+        android:gravity="top|left"
+        android:hint="请输入要发布的内容"
+        android:paddingLeft="7dip"
+        android:paddingTop="5dip"
+        android:textColor="@color/text_black"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/text_font_14" />
+
+    <com.lib.widget.FuGridView
+        android:id="@+id/fgv_addImage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:layout_marginTop="20dip"
+        android:cacheColorHint="@color/transparent"
+        android:horizontalSpacing="3dip"
+        android:listSelector="@color/transparent"
+        android:numColumns="3"
+        android:scrollingCache="false"
+        android:verticalSpacing="8dip" />
+
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_marginTop="30dip"
+        android:background="@drawable/cz_btn"
+        android:gravity="center"
+        android:text="发布"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_18" />
+
+</LinearLayout>

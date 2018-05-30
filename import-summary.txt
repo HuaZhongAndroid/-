@@ -1,0 +1,146 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From EaseUIT:
+* LICENSE
+* README.md
+* build.xml
+* ic_launcher-web.png
+* proguard-project.txt
+* read.txt
+From TZJlib:
+* ic_launcher-web.png
+* proguard-project.txt
+From tongzijunjl:
+* Android开发规范.docx
+* ic_launcher-web.png
+* key
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:22.+
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.2.4.jar => version 2.2.4 in com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In TZJlib:
+* AndroidManifest.xml => tZJlib\src\main\AndroidManifest.xml
+* assets\ => tZJlib\src\main\assets
+* res\ => tZJlib\src\main\res\
+* sixLib\ => tZJlib\src\main\java\
+* src\ => tZJlib\src\main\java\
+In EaseUIT:
+* AndroidManifest.xml => easeUIT\src\main\AndroidManifest.xml
+* assets\ => easeUIT\src\main\assets
+* libs\arm64-v8a\libBaiduMapSDK_v3_5_0_9.so => easeUIT\src\main\jniLibs\arm64-v8a\libBaiduMapSDK_v3_5_0_9.so
+* libs\arm64-v8a\liblocSDK6a.so => easeUIT\src\main\jniLibs\arm64-v8a\liblocSDK6a.so
+* libs\armeabi-v7a\libBaiduMapSDK_v3_5_0_9.so => easeUIT\src\main\jniLibs\armeabi-v7a\libBaiduMapSDK_v3_5_0_9.so
+* libs\armeabi-v7a\liblocSDK6a.so => easeUIT\src\main\jniLibs\armeabi-v7a\liblocSDK6a.so
+* libs\armeabi\libbspatch.so => easeUIT\src\main\jniLibs\armeabi\libbspatch.so
+* libs\armeabi\libvi_voslib.so => easeUIT\src\main\jniLibs\armeabi\libvi_voslib.so
+* libs\armeabi\libweibosdkcore.so => easeUIT\src\main\jniLibs\armeabi\libweibosdkcore.so
+* libs\baidumapapi_v3_5_0.jar => easeUIT\libs\baidumapapi_v3_5_0.jar
+* libs\easemobchat_2.2.3.jar => easeUIT\libs\easemobchat_2.2.3.jar
+* libs\google-play-services.jar => easeUIT\libs\google-play-services.jar
+* libs\locSDK_6.13.jar => easeUIT\libs\locSDK_6.13.jar
+* libs\mips64\liblocSDK6a.so => easeUIT\src\main\jniLibs\mips64\liblocSDK6a.so
+* libs\mips\liblocSDK6a.so => easeUIT\src\main\jniLibs\mips\liblocSDK6a.so
+* libs\org.apache.http.legacy.jar => easeUIT\libs\org.apache.http.legacy.jar
+* libs\picasso-2.4.0.jar => easeUIT\libs\picasso-2.4.0.jar
+* libs\universal-image-loader-1.9.2.jar => easeUIT\libs\universal-image-loader-1.9.2.jar
+* libs\x86\libBaiduMapSDK_v3_5_0_9.so => easeUIT\src\main\jniLibs\x86\libBaiduMapSDK_v3_5_0_9.so
+* libs\x86\liblocSDK6a.so => easeUIT\src\main\jniLibs\x86\liblocSDK6a.so
+* libs\x86_64\libBaiduMapSDK_v3_5_0_9.so => easeUIT\src\main\jniLibs\x86_64\libBaiduMapSDK_v3_5_0_9.so
+* libs\x86_64\liblocSDK6a.so => easeUIT\src\main\jniLibs\x86_64\liblocSDK6a.so
+* res\ => easeUIT\src\main\res\
+* src\ => easeUIT\src\main\java\
+In tongzijunjl:
+* AndroidManifest.xml => tongzijunjl\src\main\AndroidManifest.xml
+* assets\ => tongzijunjl\src\main\assets\
+* bmlib\ => tongzijunjl\src\main\java\
+* libs\alipaySDK-20150818.jar => tongzijunjl\libs\alipaySDK-20150818.jar
+* libs\android-async-http-1.4.9.jar => tongzijunjl\libs\android-async-http-1.4.9.jar
+* libs\bolts-android-1.2.0.jar => tongzijunjl\libs\bolts-android-1.2.0.jar
+* libs\httpclient-4.3.6.jar => tongzijunjl\libs\httpclient-4.3.6.jar
+* libs\jsoup-1.7.3.jar => tongzijunjl\libs\jsoup-1.7.3.jar
+* libs\Parse-1.9.4.jar => tongzijunjl\libs\Parse-1.9.4.jar
+* libs\pinyin4android1.0.jar => tongzijunjl\libs\pinyin4android1.0.jar
+* libs\pinyin4j-2.5.0.jar => tongzijunjl\libs\pinyin4j-2.5.0.jar
+* libs\SocialSDK_QQZone_1.jar => tongzijunjl\libs\SocialSDK_QQZone_1.jar
+* libs\SocialSDK_QQZone_2.jar => tongzijunjl\libs\SocialSDK_QQZone_2.jar
+* libs\SocialSDK_QQZone_3.jar => tongzijunjl\libs\SocialSDK_QQZone_3.jar
+* libs\SocialSDK_Sina.jar => tongzijunjl\libs\SocialSDK_Sina.jar
+* libs\SocialSDK_WeiXin_1.jar => tongzijunjl\libs\SocialSDK_WeiXin_1.jar
+* libs\SocialSDK_WeiXin_2.jar => tongzijunjl\libs\SocialSDK_WeiXin_2.jar
+* libs\umeng_social_sdk.jar => tongzijunjl\libs\umeng_social_sdk.jar
+* libs\universal-image-loader-1.9.2.jar => tongzijunjl\libs\universal-image-loader-1.9.2.jar
+* res\ => tongzijunjl\src\main\res\
+* src\ => tongzijunjl\src\main\java\
+
+Missing Android Support Repository:
+-----------------------------------
+Some useful libraries, such as the Android Support Library, are
+installed from a special Maven repository, which should be installed
+via the SDK manager.
+
+It looks like this library is missing from your SDK installation at:
+null
+
+To install it, open the SDK manager, and in the Extras category,
+select "Android Support Repository". You may also want to install the
+"Google Repository" if you want to use libraries like Google Play
+Services.
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

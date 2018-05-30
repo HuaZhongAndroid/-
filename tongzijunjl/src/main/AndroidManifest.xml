@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.richer.tzjjl"
+    android:versionCode="250"
+    android:versionName="2.5" >
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+    <!-- 允许应用读取低级别的系统日志文件 -->
+    <!-- <uses-permission android:name="android.permission.READ_LOGS" > </uses-permission> -->
+    <!-- IM -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.richer.tzjjl.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.richer.tzjjl.permission.C2D_MESSAGE" />
+
+    <!-- end  IM -->
+    <application
+        android:name="com.bm.app.App"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launchers"
+        tools:replace="icon,label"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.bm.tzj.mine.LoginAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 主页 -->
+        <activity
+            android:name="com.bm.tzjjl.activity.MainAc"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 引导页 -->
+        <activity
+            android:name="com.bm.tzjjl.activity.GuideAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 地图 -->
+        <activity
+            android:name="com.bm.tzjjl.activity.LocationMapAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 个人信息 -->
+        <activity
+            android:name="com.bm.tzj.mine.PersonalInformation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <!-- 我的客户-报备-家长列表 -->
+        <activity
+            android:name="com.bm.tzjjl.activity.BaoBeiParentInforActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 报备-新增 -->
+        <activity
+            android:name="com.bm.tzjjl.activity.BaoBeiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 报备-记录列表 -->
+        <activity
+            android:name="com.richer.tzjjl.BaobeiJiluActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 选择银行 -->
+        <activity
+            android:name="com.bm.tzj.mine.SelectBankAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 余额结算 -->
+        <activity
+            android:name="com.bm.tzj.mine.BalanceWithdrawalsAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 管理银行卡 -->
+        <activity
+            android:name="com.bm.tzj.mine.ManagerBankAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 新增银行卡 -->
+        <activity
+            android:name="com.bm.tzj.mine.AddCardAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 支付密码设置 -->
+        <activity
+            android:name="com.bm.tzj.mine.PwdSetAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 支付密码修改 -->
+        <activity
+            android:name="com.bm.tzj.mine.PwdUpAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 我的课程 -->
+        <activity
+            android:name="com.bm.tzj.mine.MyCourseAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 我的  课程详情 -->
+        <activity
+            android:name="com.bm.tzj.mine.MyCourseDetailAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 选择时间 -->
+        <activity
+            android:name="com.bm.tzj.caledar.CaledarAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 账户余额 -->
+        <activity
+            android:name="com.bm.tzj.mine.AccountBalanceAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 我的消息 -->
+        <activity
+            android:name="com.bm.tzj.mine.MyMessageAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 设置 -->
+        <activity
+            android:name="com.bm.tzj.mine.SettingAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 检查更新 -->
+        <activity
+            android:name="com.bm.tzj.mine.UpdateVAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 消息详情 -->
+        <activity
+            android:name="com.bm.tzj.mine.DetialMyMessageAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 探索详情 -->
+        <activity
+            android:name="com.bm.tzj.ts.ExploreDetailAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 放大的图片 -->
+        <activity
+            android:name="com.bm.tzjjl.activity.ImageViewActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 发布评价 -->
+        <activity
+            android:name="com.bm.tzj.mine.MyCommentAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        ]
+
+        <!-- 发帖 -->
+        <activity
+            android:name="com.bm.tzj.ts.SendContentAc"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+
+        <!-- 好友 -->
+        <activity
+            android:name="com.bm.im.ac.FriendAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 查询好友 -->
+        <activity
+            android:name="com.bm.im.ac.SearchFriendAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 添加好友 -->
+        <activity
+            android:name="com.bm.im.ac.AddFriendAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 群信息 -->
+        <activity
+            android:name="com.bm.im.ac.GroupInfoAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 课程详情 -->
+        <activity
+            android:name="com.bm.tzj.kc.CourseDetailAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 免责声明 -->
+        <activity
+            android:name="com.bm.tzj.kc.DisclaimerAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 课程旅伴 -->
+        <activity
+            android:name="com.bm.tzj.kc.CourseCompanionAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 顾问教练 -->
+        <activity
+            android:name="com.bm.tzj.kc.CoachInformationAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 家长评价 -->
+        <activity
+            android:name="com.bm.tzj.kc.CommentAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 支付方式 -->
+        <activity
+            android:name="com.bm.tzj.kc.PayInfoAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 课程列表 -->
+        <activity
+            android:name="com.bm.tzj.kc.CourseListAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 启动页 -->
+        <activity
+            android:name="com.bm.tzjjl.activity.StartAc"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 找回密码 -->
+        <activity
+            android:name="com.bm.tzj.mine.RetrievePasswordAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 重置密码 -->
+        <activity
+            android:name="com.bm.tzj.mine.ForgotpassAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 注册 -->
+        <activity
+            android:name="com.bm.tzj.mine.RegistreAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 完善信息 -->
+        <activity
+            android:name="com.bm.tzj.mine.PerfectInfoAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 意见反馈 -->
+        <activity
+            android:name="com.bm.tzj.mine.FeedBackAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 城市 -->
+        <activity
+            android:name="com.bm.tzj.city.Activity01"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <!-- 余额明细 -->
+        <activity
+            android:name="com.bm.tzj.mine.MyIntegralAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 修改密码 -->
+        <activity
+            android:name="com.bm.tzj.mine.UpdatePwdAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 勋章详情 -->
+        <activity
+            android:name="com.bm.tzj.czzx.MedalDetailAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 荣誉榜 -->
+        <activity
+            android:name="com.bm.tzj.czzx.HonoRollAc"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 发表评论 -->
+        <activity
+            android:name="com.bm.tzj.mine.AddCommentAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 成长中心 -->
+        <activity
+            android:name="com.bm.tzj.kc.GrowthCenterAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 课程评价 -->
+        <activity
+            android:name="com.bm.tzj.kc.CourseCommentAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 签到 -->
+        <activity
+            android:name="com.bm.tzj.kc.SigninAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 更改群头像 -->
+        <activity
+            android:name="com.bm.im.ac.UpdateGroupPicAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 友盟分享 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="556d756867e58e164d001521" />
+        
+        <!-- 相册中多选图片 -->
+        <activity
+            android:name="com.selectimg.logic.ImgFileListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.selectimg.logic.ImgsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- end -->
+
+        <!-- 腾讯SSO授权的Activity注册 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104570790" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.umeng.socialize.view.ShareActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDialog"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <!--<activity-->
+            <!--android:name="com.bmcom.bm.tzjjl.activity.wxapi.WXEntryActivitytivity"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize"-->
+            <!--android:exported="true"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+
+        <!-- end友盟分享 -->
+
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <!--<activity-->
+            <!--android:name="com.alipay.android.app.sdk.WapPayActivity"-->
+            <!--android:screenOrientation="portrait" >-->
+        <!--</activity>-->
+
+        <!-- alipay sdk end -->
+
+
+        <!-- weichat pay -->
+        <receiver android:name="com.bm.pay.wxapi.AppRegister" >
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+        <!--<activity-->
+            <!--android:name="com.bmcom.bm.tzjjl.activity.wxapi.WXPayEntryActivitytivity"-->
+            <!--android:exported="true"-->
+            <!--android:launchMode="singleTop" />-->
+
+        <!-- weichat pay  end -->
+        <!-- IM -->
+        <!-- 聊天页面 -->
+        <activity
+            android:name="com.bm.im.ac.ChatActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+
+        <!-- 聊天页面 Menu -->
+        <activity
+            android:name="com.bm.im.ac.ContextMenuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+        <!-- 显示下载大图页面 -->
+        <activity
+            android:name="com.easemob.easeui.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/horizontal_slide" >
+        </activity>
+        <!-- 聊天页面 -->
+        <!--<activity-->
+            <!--android:name="com.easemob.applib.ui.ChatActivity"-->
+            <!--android:launchMode="singleTop"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/horizontal_slide"-->
+            <!--android:windowSoftInputMode="adjustResize" >-->
+        <!--</activity>-->
+        <!-- 查看评价 -->
+        <activity
+            android:name="com.bm.im.ac.EvaluateShowAc"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 开机自启动服务 -->
+        <receiver android:name="com.easemob.chat.StartServiceReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- gcm start -->
+        <receiver
+            android:name="com.easemob.chat.EMGCMBroadcastReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.easemob.chatuidemo" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.easemob.chat.EMGCMListenerService"
+            android:exported="false" >
+        </service>
+
+       <!-- <receiver
+            android:name="com.easemob.chatuidemo.receiver.GCMPushBroadCast"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.easemob.sdk.push" />
+
+                <category android:name="com.easemob.chatuidemo" />
+            </intent-filter>
+        </receiver>
+         gcm end -->
+
+
+        <!-- 设置环信应用的appkey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="jascouts#tongzijun" />
+        <!-- 声明sdk所需的service -->
+        <service
+            android:name="com.easemob.chat.EMChatService"
+            android:exported="true" />
+        <!-- 声明sdk所需的receiver -->
+        <receiver android:name="com.easemob.chat.EMMonitorReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <!-- end -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" />
+            </intent-filter>
+        </service>
+
+        <!-- meta-data需要写在application中 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Iu8inY759lrRbqMzNRrRpvj8" />
+
+       
+    </application>
+
+</manifest>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="100dip"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:background="@color/app_dominantHue"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:id="@+id/iv_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:src="@drawable/cardtag" />
+
+            <TextView
+                android:id="@+id/tv_bank_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dip"
+                android:text="平安银行"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_font_16" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="55dp"
+            android:layout_weight="1"
+            android:text="江仕华"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_13" />
+
+        <TextView
+            android:id="@+id/tv_bank_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dip"
+            android:layout_marginLeft="55dp"
+            android:text="**** **** **** **** 9090"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_24" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_right"
+        android:layout_width="80dip"
+        android:layout_height="match_parent"
+        android:background="@drawable/glyhk_shape" >
+
+        <TextView
+            android:id="@+id/item_right_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</LinearLayout>

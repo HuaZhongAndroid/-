@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginBottom="10dip"
+        android:background="@color/white"
+        android:padding="10dip" >
+
+        <FrameLayout style="@style/ww" >
+
+            <com.lib.widget.RoundImageViewFive
+                android:id="@+id/img_pic"
+                android:layout_width="110dip"
+                android:layout_height="100dip"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tv_mycourse_Endstates"
+                style="@style/ww"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/collection_lab"
+                android:paddingBottom="3dip"
+                android:paddingLeft="8dip"
+                android:paddingRight="8dip"
+                android:paddingTop="3dip"
+                android:text="已结束"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_font_11" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="12dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_mycourse_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="[晋级课程] 滚筒+鸟巢+西藏之课程"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="@dimen/text_font_16" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="2.5"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_mycourse_club"
+                        style="@style/ww"
+                        android:layout_marginBottom="4dip"
+                        android:layout_marginLeft="2dip"
+                        android:layout_marginTop="4dip"
+                        android:background="@drawable/kc_lab"
+                        android:paddingBottom="2dip"
+                        android:paddingLeft="5dip"
+                        android:paddingRight="3dip"
+                        android:paddingTop="2dip"
+                        android:text="户外基地"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_font_11" />
+
+                    <TextView
+                        android:id="@+id/tv_mycourse_address"
+                        style="@style/ww"
+                        android:ellipsize="end"
+                        android:maxEms="7"
+                        android:singleLine="true"
+                        android:text="上海龙之梦"
+                        android:textColor="@color/txt_color_a"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_mycourse_money"
+                    style="@style/ww"
+                    android:layout_marginRight="10dip"
+                    android:text="￥99"
+                    android:textColor="@color/app_dominantHue"
+                    android:textSize="@dimen/text_font_18" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_mycourse_time"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_marginTop="3dip"
+                android:layout_weight="1"
+                android:text="2015-12-21 10:30-11:30"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_14" />
+
+            <TextView
+                android:id="@+id/tv_mycourse_Endtime"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:text="2015-12-21 10:30-11:30"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.2dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        style="@style/fwh"
+        android:background="#eeeaf1" >
+
+        <FrameLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_cjet"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:gravity="center"
+                android:paddingBottom="15dip"
+                android:paddingTop="15dip"
+                android:text="参加儿童（0）"
+                android:textColor="@color/app_dominantHue"
+                android:textSize="@dimen/text_font_16" />
+
+            <View
+                android:id="@+id/v_1"
+                android:layout_width="105dip"
+                android:layout_height="2dip"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/com_shape" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.01dip"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/my_line" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_ypf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="15dip"
+                android:paddingTop="15dip"
+                android:text="已评分（0）"
+                android:textColor="@color/course_bg_textColor"
+                android:textSize="@dimen/text_font_16" />
+
+            <View
+                android:id="@+id/v_2"
+                android:layout_width="105dip"
+                android:layout_height="2dip"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/kc_shape"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.01dip"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/my_line" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_wpf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="15dip"
+                android:paddingTop="15dip"
+                android:text="未评分（0）"
+                android:textColor="@color/course_bg_textColor"
+                android:textSize="@dimen/text_font_16" />
+
+            <View
+                android:id="@+id/v_3"
+                android:layout_width="105dip"
+                android:layout_height="2dip"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/kc_shape"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.01dip"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/my_line" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1px" />
+
+</LinearLayout>

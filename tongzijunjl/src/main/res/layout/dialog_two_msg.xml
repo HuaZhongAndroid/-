@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    android:padding="0dip" >
+
+    <LinearLayout
+        android:layout_width="285dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/dialog_bg"
+        android:orientation="vertical"
+        android:paddingBottom="10dip" >
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dip"
+            android:gravity="center"
+            android:paddingBottom="20dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="建群后，会将参与本课程的所有家长都加入群中，你可以在消息中找到群。确定建群吗？"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_16" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip" >
+
+            <TextView
+                android:id="@+id/btn_Cancel"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_dialogtwo"
+                android:gravity="center"
+                android:padding="10dip"
+                android:text="返回"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/btn_Determine"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:layout_weight="1"
+                android:background="@drawable/btn_dialogone"
+                android:gravity="center"
+                android:padding="10dip"
+                android:text="确认建群"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_font_15" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

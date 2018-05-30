@@ -1,0 +1,80 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.bm.tzj.caledar.CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffffff" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dip"
+            android:gravity="center"
+            android:text="选择上课时间段"
+            android:textColor="@color/txt_name"
+            android:textSize="@dimen/text_font_14"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.01dip"
+            android:layout_marginBottom="6dip"
+            android:layout_marginTop="6dip"
+            android:background="@drawable/my_line"
+            android:visibility="gone" />
+
+        <com.lib.widget.FuGridView
+            android:id="@+id/gv_explore_time"
+            style="@style/ww"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dip"
+            android:layout_marginLeft="16dip"
+            android:layout_marginRight="16dip"
+            android:layout_marginTop="20dip"
+            android:columnWidth="80dip"
+            android:gravity="center"
+            android:horizontalSpacing="10dip"
+            android:listSelector="@color/transparent"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_marginTop="40dip"
+            android:background="@drawable/btn_login"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_16" />
+        
+        <TextView
+            android:id="@+id/tv_clear"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_marginTop="16dip"
+            android:background="@drawable/btn_white_login"
+            android:gravity="center"
+            android:text="清除"
+            android:textColor="@color/app_dominantHue"
+            android:textSize="@dimen/text_font_16" />
+    </LinearLayout>
+
+</ScrollView>

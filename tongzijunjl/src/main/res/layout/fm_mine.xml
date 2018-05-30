@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="@color/bg_color" >
+
+        <ImageButton
+            android:id="@+id/ib_left"
+            android:layout_width="40dip"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/back"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_center"
+            style="@style/ww"
+            android:layout_centerInParent="true"
+            android:ems="8"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="个人中心"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_22" />
+
+        <TextView
+            android:id="@+id/tv_right"
+            style="@style/ww"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:text=""
+            android:textColor="@color/personal_textNameColor"
+            android:textSize="@dimen/text_font_17" />
+
+        <ImageButton
+            android:id="@+id/ib_right"
+            style="@style/ww"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@null"
+            android:padding="12dip"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_right"
+            style="@style/wwh"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/tv_right_share_left"
+                style="@style/ww"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/back"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_right_share"
+                style="@style/ww"
+                android:background="@drawable/back"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_right_fav"
+                style="@style/ww"
+                android:layout_marginLeft="10dip"
+                android:background="@drawable/back"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.lib.widget.ReboundScrollView
+        style="@style/ffv"
+        android:background="@color/bg_gray"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            style="@style/ffv"
+            android:fitsSystemWindows="true" >
+
+            <LinearLayout
+                style="@style/fwv"
+                android:background="@drawable/mine_bg" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_wdl"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <ImageView
+                            android:layout_width="110dip"
+                            android:layout_height="110dip"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dip"
+                            android:src="@drawable/my_defa_head" />
+
+                        <TextView
+                            android:id="@+id/tv_login"
+                            style="@style/ww"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="20dip"
+                            android:layout_marginTop="8dip"
+                            android:drawablePadding="5dip"
+                            android:drawableRight="@drawable/my_more"
+                            android:gravity="center"
+                            android:text="请登录账号"
+                            android:textColor="#212121"
+                            android:textSize="@dimen/text_font_18" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_dl"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <net.grobas.view.PolygonImageView
+                            android:id="@+id/iv_sixview_head"
+                            android:layout_width="110dip"
+                            android:layout_height="100dip"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="15dip"
+                            app:poly_border="true"
+                            app:poly_border_width="5dp"
+                            app:poly_corner_radius="25"
+                            app:poly_rotation_angle="90"
+                            app:poly_vertices="6" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            style="@style/ww"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dip"
+                            android:gravity="center"
+                            android:text="张娜"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_font_18" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_money"
+                            style="@style/fwh"
+                            android:gravity="center"
+                            android:padding="10dip" >
+
+                            <TextView
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dip"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:text="余额"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_font_15" />
+
+                            <View
+                                android:layout_width="0.02dip"
+                                android:layout_height="14dip"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:id="@+id/tv_money"
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_weight="1"
+                                android:text="1088元"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_font_15" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="12dip"
+                android:background="@drawable/line" />
+
+            <LinearLayout
+                style="@style/fwv"
+                android:background="@drawable/box"
+                android:paddingLeft="12dip"
+                android:paddingRight="12dip" >
+
+                <!-- 个人信息 -->
+
+                <LinearLayout
+                    android:id="@+id/ll_personaInfo"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="个人信息"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+                <!-- 我的客户 -->
+
+                <LinearLayout
+                    android:id="@+id/ll_mygod"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="我的客户"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+
+                <!-- 余额明细 -->
+
+                <LinearLayout
+                    android:id="@+id/ll_balanceDetail"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="余额明细"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_settlement"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="余额结算"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_updatePassWord"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="登录密码修改"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_message"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="消息"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_feedback"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="意见反馈"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_about"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="关于软件"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/ll_help"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="帮助"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+
+                <!-- 清除本地缓存 -->
+
+                <LinearLayout
+                    android:id="@+id/ll_clear"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="清除本地缓存"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@drawable/line" />
+                <!-- 检查版本更新 -->
+
+                <LinearLayout
+                    android:id="@+id/ll_updateVersion"
+                    style="@style/fwh"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginTop="15dip" >
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1"
+                        android:text="检查更新"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/my_more" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@drawable/line" />
+
+            <TextView
+                android:id="@+id/tv_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="12dip"
+                android:layout_marginRight="12dip"
+                android:layout_marginTop="15dip"
+                android:background="@drawable/mine_btn"
+                android:gravity="center"
+                android:text="退出当前登录"
+                android:textColor="@color/app_dominantHue"
+                android:textSize="@dimen/text_font_18" />
+        </LinearLayout>
+    </com.lib.widget.ReboundScrollView>
+
+</LinearLayout>

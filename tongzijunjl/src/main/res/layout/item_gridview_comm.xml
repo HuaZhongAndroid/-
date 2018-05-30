@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/fwh" 
+        android:gravity="center_vertical"
+        >
+
+        <ImageView
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:id="@+id/iv_select"
+            style="@style/ww"
+            android:button="@drawable/btn_commtype_selector"
+            android:src="@drawable/check_comment_off" />
+
+        <TextView
+            android:singleLine="true"
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="您是什么原因想拒绝啊 ,哈哈哈哈哈"
+            android:textColor="@color/txt_title_detail"
+            android:textSize="@dimen/text_font_12" />
+    </LinearLayout>
+
+</LinearLayout>

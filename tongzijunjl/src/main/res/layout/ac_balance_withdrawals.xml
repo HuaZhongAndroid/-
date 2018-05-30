@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/account_bg_Color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="120dip"
+        android:background="@drawable/zhye_bg"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <LinearLayout style="@style/fwh" >
+
+            <TextView
+                style="@style/ww"
+                android:layout_gravity="center_vertical"
+                android:text="余额"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                style="@style/ww"
+                android:layout_marginLeft="16dip"
+                android:text="￥0"
+                android:textColor="@color/app_dominantHue"
+                android:textSize="@dimen/text_font_30" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/fwh" >
+
+            <TextView
+                android:id="@+id/tv_addCard"
+                style="@style/ww"
+                android:layout_marginLeft="6dip"
+                android:layout_marginTop="16dip"
+                android:background="@drawable/explore_box_border"
+                android:gravity="center"
+                android:paddingBottom="8dip"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:paddingTop="8dip"
+                android:text="新增银行卡"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_administrationCard"
+                style="@style/ww"
+                android:layout_marginLeft="26dip"
+                android:layout_marginTop="16dip"
+                android:background="@drawable/explore_box"
+                android:gravity="center"
+                android:paddingBottom="8dip"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:paddingTop="8dip"
+                android:text="管理银行卡"
+                android:textColor="@color/app_dominantHue"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.02dip"
+        android:background="@color/line_color" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.02dip"
+        android:layout_marginTop="10dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        style="@style/fwv"
+        android:background="@color/white" >
+
+        <LinearLayout
+            android:id="@+id/ll_bank"
+            style="@style/fwh"
+            android:layout_marginBottom="15dip"
+            android:layout_marginTop="15dip" >
+
+            <TextView
+                style="@style/ww"
+                android:layout_gravity="center"
+                android:paddingLeft="15dip"
+                android:text="银行卡"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_bank_message"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="32dip"
+                android:layout_weight="2"
+                android:text="请选择"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                style="@style/ww"
+                android:paddingRight="10dip"
+                android:src="@drawable/arrowright" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.02dip"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginBottom="15dip"
+            android:layout_marginTop="15dip" >
+
+            <TextView
+                style="@style/ww"
+                android:layout_gravity="center"
+                android:paddingLeft="15dip"
+                android:text="结算金额"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="@dimen/text_font_15" />
+
+            <EditText
+                android:id="@+id/et_money"
+                android:inputType="numberDecimal"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dip"
+                android:layout_weight="2"
+                android:background="@null"
+                android:hint="请输入结算金额"
+                android:textColorHint="#bfbfbf"
+                android:textColor="@color/account_textColor"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.02dip"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+    
+    <TextView
+        android:id="@+id/tv_add"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_marginTop="30dip"
+        android:background="@drawable/btn_login"
+        android:gravity="center"
+        android:text="提交申请"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_16" />
+
+</LinearLayout>

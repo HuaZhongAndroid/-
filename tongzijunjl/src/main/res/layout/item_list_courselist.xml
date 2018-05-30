@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout style="@style/fw" >
+
+        <ImageView
+            android:id="@+id/img_pic"
+            android:layout_width="fill_parent"
+            android:layout_height="200dip"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pic_hd" />
+
+        <FrameLayout style="@style/ff" >
+
+            <LinearLayout
+                style="@style/fwh"
+                android:layout_marginTop="25dip" >
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/label_number"
+                        android:paddingBottom="3dip"
+                        android:paddingLeft="6dip"
+                        android:paddingTop="3dip"
+                        android:text="报名人数 4/8"
+                        android:textColor="#2b2e34"
+                        android:textSize="@dimen/text_font_14" />
+
+                    <TextView
+                        android:id="@+id/tv_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/label_age"
+                        android:paddingBottom="3dip"
+                        android:paddingLeft="6dip"
+                        android:paddingTop="3dip"
+                        android:text="适合年龄3-4岁"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_font_13" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/label_price"
+                    android:padding="7dip"
+                    android:text="￥99"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_font_17" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/fwh"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dip" >
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:text="[晋级课程] 滚筒+鸟巢"
+                        android:singleLine="true"
+                        android:paddingLeft="15dip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_font_17" />
+
+                    <LinearLayout
+                        android:paddingLeft="7dip"
+                        style="@style/fwh"
+                        android:layout_marginTop="5dip" >
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            style="@style/ww"
+                            android:layout_gravity="center_vertical"
+                            android:text="上海龙之梦店"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_font_13" />
+
+                        <TextView
+                            android:id="@+id/tv_category"
+                            android:layout_width="80dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingTop="1dip"
+                            android:paddingBottom="1dip"
+                            android:background="@drawable/label_category"
+                            android:gravity="center"
+                            android:text="城市营地"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_font_12" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="10dip"
+                    style="@style/wfv"
+                    android:layout_marginRight="10dip"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:text="10:00-13:00"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginTop="6dip"
+                        android:text="2012.12.08"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_font_14" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

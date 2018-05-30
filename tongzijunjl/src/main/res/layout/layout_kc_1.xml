@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_kc_one"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/fwv" >
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_nl" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="适合年龄"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="18dip"
+                android:text="0岁"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_sj" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="时间"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="18dip"
+                android:text=""
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:id="@+id/ll_address"
+            style="@style/fwv"
+            android:visibility="gone" >
+
+            <LinearLayout
+                style="@style/fwh"
+                android:layout_marginTop="12dip" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/kc_dz" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="门店名称"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_15" />
+
+                <TextView
+                    android:id="@+id/tv_storeAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="18dip"
+                    android:text=""
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_14" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dip"
+                android:layout_marginTop="12dip"
+                android:background="@color/line_color" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_map"
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dip"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/kc_dz" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="地点"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="230dip"
+                android:paddingRight="10dip"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dip"
+                android:drawableRight="@drawable/my_more"
+                android:gravity="right"
+                android:text=""
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+</LinearLayout>

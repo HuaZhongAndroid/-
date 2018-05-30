@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff4f4f4"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#ffffff"
+        android:padding="12dp" >
+
+        <EditText
+            android:id="@+id/et_baobeicontext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="报备内容..."
+            android:inputType="textMultiLine"
+            android:textColor="#ff333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="40dp"
+        android:text="沟通方式"
+        android:textColor="#ff999999" />
+
+    <RadioGroup
+        android:id="@+id/rg_baobei_gtfs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp" >
+
+        <RadioButton
+            android:id="@+id/rb_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@drawable/rb_checheck_selector"
+            android:checked="true"
+            android:tag="1"
+            android:text="微信"
+            android:textColor="#ff333333" />
+
+        <RadioButton
+            android:id="@+id/rb_telpone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@drawable/rb_checheck_selector"
+            android:tag="2"
+            android:text="电话"
+            android:textColor="#ff333333" />
+
+        <RadioButton
+            android:id="@+id/rb_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@drawable/rb_checheck_selector"
+            android:tag="3"
+            android:text="短信"
+            android:textColor="#ff333333" />
+
+        <RadioButton
+            android:id="@+id/rb_xianc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@drawable/rb_checheck_selector"
+            android:tag="4"
+            android:text="现场"
+            android:textColor="#ff333333" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="40dp"
+        android:text="沟通程度"
+        android:textColor="#ff999999" />
+
+    <RadioGroup
+        android:id="@+id/rg_baobei_gtcd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp" >
+
+        <RadioButton
+            android:id="@+id/rb_yyx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:button="@drawable/rb_checheck_selector"
+            android:checked="true"
+            android:tag="1"
+            android:text="有意向"
+            android:textColor="#ff333333" />
+
+        <RadioButton
+            android:id="@+id/rb_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.55"
+            android:button="@drawable/rb_checheck_selector"
+            android:tag="2"
+            android:text="初步"
+            android:textColor="#ff333333" />
+
+        <RadioButton
+            android:id="@+id/rb_sd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:button="@drawable/rb_checheck_selector"
+            android:tag="3"
+            android:text="深度"
+            android:textColor="#ff333333" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/btu_baobei_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_login"
+            android:button="@null"
+            android:text="提交"
+            android:textColor="#ffffff"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+</LinearLayout>

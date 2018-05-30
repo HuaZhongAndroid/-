@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingBottom="10dip"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/fwv"
+                android:background="@color/white" >
+
+                <!-- 广告图 -->
+
+                <FrameLayout style="@style/fw" >
+
+                    <ImageView
+                        android:id="@+id/img_bg"
+                        android:layout_width="fill_parent"
+                        android:layout_height="170dip"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tv_signup"
+                        android:layout_width="70dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dip"
+                        android:background="@drawable/label_number"
+                        android:paddingBottom="3dip"
+                        android:paddingLeft="6dip"
+                        android:paddingTop="3dip"
+                        android:text="报名 0/0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_font_13" />
+
+                    <com.lib.widget.BannerView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/bannerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:visibility="gone" >
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/banner_viewpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <com.lib.widget.DotView
+                            android:id="@+id/banner_dotview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            app:dot_number="5"
+                            app:dot_radius="4dp"
+                            app:dot_selected_color="0xffffffff"
+                            app:dot_span="8dp"
+                            app:dot_unselected_color="0x80ffffff" />
+                    </com.lib.widget.BannerView>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/box"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        style="@style/ww"
+                        android:layout_margin="8dip"
+                        android:text=""
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dip"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            style="@style/ww"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="8dip"
+                            android:layout_weight="1"
+                            android:text="￥0.00"
+                            android:textColor="@color/app_dominantHue"
+                            android:textSize="@dimen/text_font_18" />
+
+                        <TextView
+                            android:id="@+id/tv_category"
+                            style="@style/ww"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="8dip"
+                            android:background="@drawable/kc_lab"
+                            android:gravity="center"
+                            android:paddingLeft="5dip"
+                            android:paddingRight="5dip"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_font_13" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 课程1种类型 -->
+
+            <include layout="@layout/layout_kc_1" />
+
+            <!-- <include layout="@layout/layout_kc_2" /> -->
+            <!-- 课程要点 -->
+
+            <LinearLayout
+                style="@style/fwv"
+                android:layout_marginTop="8dip"
+                android:background="@color/white"
+                android:paddingBottom="2dip"
+                android:paddingLeft="7dip"
+                android:paddingRight="6dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dip"
+                    android:layout_marginLeft="5dip"
+                    android:gravity="center_vertical"
+                    android:text="课程要点"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_16" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.1dip"
+                    android:background="@color/line_color" />
+
+                <WebView
+                    android:id="@+id/webview"
+                    style="@style/fw"
+                    android:layout_marginTop="5dip"
+                    android:background="@android:color/transparent"
+                    android:scrollbars="none" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="60dip" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_class"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/txt_yellow_color"
+        android:gravity="center"
+        android:padding="15dip"
+        android:text="立即约课"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_17" />
+
+</FrameLayout>

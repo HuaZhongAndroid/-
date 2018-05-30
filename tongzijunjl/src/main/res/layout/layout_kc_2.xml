@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_kc_two"
+     >
+
+    <LinearLayout style="@style/fwv" >
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_nl" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="适合年龄"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dip"
+                android:text="3-4岁"
+                android:textColor="@color/txt_name"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_md" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="选择门店"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginTop="4dip" >
+
+            <com.bm.view.TagFlowLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="6dip"
+                android:id="@+id/id_flowlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:max_select="1" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:id="@+id/ll_map_two"
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_dz" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="店面地址"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_two_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dip"
+                android:drawablePadding="5dip"
+                android:drawableRight="@drawable/my_more"
+                android:text="虹口区广纪路838号"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:id="@+id/ll_time"
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_sj" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="上课时间"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dip"
+                android:drawablePadding="5dip"
+                android:drawableRight="@drawable/my_more"
+                android:text="2015.10.28 10:00-13:00"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+</LinearLayout>
