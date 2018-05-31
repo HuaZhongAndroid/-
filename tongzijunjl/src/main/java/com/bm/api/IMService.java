@@ -42,12 +42,14 @@ public class IMService  extends BaseApi {
 	
 	
 	/**
+	 * 已废弃
+	 *
 	 * 批量获取用户头像和昵称
 	 * @param loginPost 
 	 * @param callback
 	 */
 	public void getImUserInfoList(Context context,HashMap<String, String> map, final ServiceCallback<CommonListResult<CoachInfo>> callback){
-		AsyncHttpHelp.getInstance().httpGet(context, API_GETIMUSERINFOLIST, map, callback);
+	//	AsyncHttpHelp.getInstance().httpGet(context, API_GETIMUSERINFOLIST, map, callback);
 	}
 	
 	/**

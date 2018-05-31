@@ -166,7 +166,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 //						.show();
 			}
 		});
-		initOverlay();
+		//initOverlay();
 		cityInit();
 //		hotCityInit();
 		getHotCityList();

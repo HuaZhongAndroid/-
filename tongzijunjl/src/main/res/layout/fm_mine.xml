@@ -260,7 +260,7 @@
                     android:layout_height="1dip"
                     android:background="@drawable/line" />
 
-                <!-- 余额明细 -->
+                <!-- 收入明细 -->
 
                 <LinearLayout
                     android:id="@+id/ll_balanceDetail"
@@ -274,7 +274,7 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dip"
                         android:layout_weight="1"
-                        android:text="余额明细"
+                        android:text="收入明细"
                         android:textColor="@color/txt_teacher_name"
                         android:textSize="@dimen/text_font_16" />
 

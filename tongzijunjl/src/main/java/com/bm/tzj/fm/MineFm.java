@@ -35,6 +35,7 @@ import com.bm.tzj.mine.UpdateVAc;
 import com.bm.tzjjl.activity.BaoBeiActivity;
 import com.bm.tzjjl.activity.BaoBeiParentInforActivity;
 import com.bm.tzjjl.activity.MainAc;
+import com.bm.tzjjl.activity.MyWebActivity;
 import com.richer.tzjjl.R;
 import com.bm.util.DataCleanManager;
 import com.bm.util.Util;
@@ -192,8 +193,8 @@ public class MineFm extends Fragment implements OnClickListener {
 			intent = new Intent(context,ManagerBankAc.class);
 			startActivity(intent);
 			break;
-		case R.id.ll_balanceDetail:// 余额明细
-			intent = new Intent(context, MyIntegralAc.class);
+		case R.id.ll_balanceDetail:// 收入明细
+			intent = new Intent(context, MyWebActivity.class);
 			startActivity(intent);
 			break;
 		case R.id.ll_settlement:// 余额结算

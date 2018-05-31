@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.richer.tzjjl"
-    android:versionCode="250"
-    android:versionName="2.5" >
+    android:versionCode="260"
+    android:versionName="2.6" >
 
     <supports-screens
         android:anyDensity="true"
@@ -314,10 +314,16 @@
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <!-- 余额明细 -->
+        <!--<activity-->
+            <!--android:name="com.bm.tzj.mine.MyIntegralAc"-->
+            <!--android:screenOrientation="portrait" >-->
+        <!--</activity>-->
+        <!-- 收入明细 -->
         <activity
-            android:name="com.bm.tzj.mine.MyIntegralAc"
+            android:name="com.bm.tzjjl.activity.MyWebActivity"
             android:screenOrientation="portrait" >
         </activity>
+
 
         <!-- 修改密码 -->
         <activity
