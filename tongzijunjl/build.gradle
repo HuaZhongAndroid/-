@@ -11,13 +11,31 @@ android {
         multiDexEnabled true
     }
 
-    buildTypes {
+    signingConfigs {
+        debug {
+            keyAlias 'tzj'
+            keyPassword 'tongzijun'
+            storeFile file('key')
+            storePassword 'tongzijun'
+        }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            keyAlias 'tzj'
+            keyPassword 'tongzijun'
+            storeFile file('key')
+            storePassword 'tongzijun'
         }
     }
 
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
     dexOptions {
         javaMaxHeapSize "4g"
     }
@@ -48,4 +66,9 @@ dependencies {
     compile files('libs/SocialSDK_WeiXin_2.jar')
     compile files('libs/umeng_social_sdk.jar')
    // compile files('libs/universal-image-loader-1.9.2.jar')
+    //腾讯bugly bug收集器
+    compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+
+
 }
