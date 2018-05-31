@@ -19,99 +19,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:id="@+id/tabs_ll"
         android:layout_height="wrap_content"
         android:background="#fcfcfc" >
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+        <com.bm.view.TabMyView
             android:layout_weight="1"
-            android:background="@color/transparent" >
+            android:layout_width="match_parent"
+            android:layout_height="55dip">
 
-            <RelativeLayout
-                android:id="@+id/pullulateLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="55dip"
-                android:layout_gravity="center"
-                 >
-
-                <ImageView
-                    android:id="@+id/iv_e"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/m_1_h" />
-            </RelativeLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+        </com.bm.view.TabMyView>
+        <com.bm.view.TabMyView
             android:layout_weight="1"
-            android:background="@color/transparent" >
+            android:layout_width="match_parent"
+            android:layout_height="55dip">
 
-            <RelativeLayout
-                android:id="@+id/messageLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="55dip"
-                android:layout_gravity="center"
-                >
-
-                <ImageView
-                    android:id="@+id/iv_b"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/m_2_h" />
-            </RelativeLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dip"
+        </com.bm.view.TabMyView>
+        <com.bm.view.TabMyView
             android:layout_weight="1"
-            android:background="@color/transparent" >
+            android:layout_width="match_parent"
+            android:layout_height="55dip">
 
-            <RelativeLayout
-                android:id="@+id/indexLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="55dip"
-                android:layout_gravity="center" >
+        </com.bm.view.TabMyView>
 
-                <ImageView
-                    android:id="@+id/iv_a"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom="6dip"
-                    android:src="@drawable/m_3" />
-            </RelativeLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dip"
-            android:layout_weight="1"
-            android:background="@color/transparent" >
-
-            <RelativeLayout
-                android:id="@+id/meLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="55dip"
-                android:layout_gravity="center">
-
-                <ImageView
-                    android:id="@+id/iv_d"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:paddingBottom="6dip"
-                    android:src="@drawable/m_4_h" />
-            </RelativeLayout>
-        </FrameLayout>
     </LinearLayout>
 
 </LinearLayout>

@@ -50,6 +50,7 @@ dependencies {
     compile project(':tZJlib')
     compile project(':easeUIT')
     compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.just.agentweb:agentweb:4.0.2'
     compile files('libs/alipaySDK-20150818.jar')
     compile files('libs/android-async-http-1.4.9.jar')
     compile files('libs/bolts-android-1.2.0.jar')

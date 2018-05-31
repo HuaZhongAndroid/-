@@ -427,7 +427,10 @@
         <!--</activity>-->
 
         <!-- alipay sdk end -->
-
+        <activity
+            android:name="com.bm.tzjjl.activity.MyWebActivity"
+            android:screenOrientation="portrait" >
+        </activity>
 
         <!-- weichat pay -->
         <receiver android:name="com.bm.pay.wxapi.AppRegister" >
