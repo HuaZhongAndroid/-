@@ -38,11 +38,9 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 			convertView = mInflater.inflate(R.layout.item_list_mycourse, null);
 			itemView.tv_mycourse_name = (TextView)convertView.findViewById(R.id.tv_mycourse_name);
 			itemView.img_pic = (RoundImageViewFive)convertView.findViewById(R.id.img_pic);
-			itemView.tv_yjq = (TextView)convertView.findViewById(R.id.tv_yjq);
 			itemView.tv_mycourse_time = (TextView)convertView.findViewById(R.id.tv_mycourse_time);
 			itemView.tv_mycourse_address = (TextView)convertView.findViewById(R.id.tv_mycourse_address);
 			itemView.tv_mycourse_money = (TextView)convertView.findViewById(R.id.tv_mycourse_money);
-			itemView.tv_jq = (TextView)convertView.findViewById(R.id.tv_jq);
 			itemView.tv_mycourse_Endstates = (TextView)convertView.findViewById(R.id.tv_mycourse_Endstates);
 			itemView.tv_qd = (TextView)convertView.findViewById(R.id.tv_qd);
 			itemView.tv_qxkc = (TextView)convertView.findViewById(R.id.tv_qxkc);
@@ -97,8 +95,6 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 			itemView.tv_qxkc.setVisibility(View.GONE);//取消课程
 			itemView.tv_qd.setVisibility(View.GONE);//签到
 			itemView.tv_kcpj.setVisibility(View.VISIBLE);//评价
-			itemView.tv_jq.setVisibility(View.GONE);//建群
-			itemView.tv_yjq.setVisibility(View.GONE);//已建群
 		}else if(entity.classStatus.equals("2")){
 			itemView.tv_mycourse_Endstates.setTextColor(context.getResources().getColor(R.color.white));
 			itemView.tv_mycourse_Endstates.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.collection_lab_two));
@@ -106,14 +102,7 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 			itemView.tv_qxkc.setVisibility(View.GONE);
 			itemView.tv_qd.setVisibility(View.VISIBLE);
 			itemView.tv_kcpj.setVisibility(View.GONE);
-			/**0未建群    1已建群*/
-			if(entity.groupStatus.equals("0")){
-				itemView.tv_jq.setVisibility(View.VISIBLE);
-				itemView.tv_yjq.setVisibility(View.GONE);
-			}else if(entity.groupStatus.equals("1")){
-				itemView.tv_jq.setVisibility(View.GONE);
-				itemView.tv_yjq.setVisibility(View.VISIBLE);
-			}
+
 		}else if(entity.classStatus.equals("1")){
 			itemView.tv_mycourse_Endstates.setTextColor(context.getResources().getColor(R.color.white));
 			itemView.tv_mycourse_Endstates.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.collection_lab));
@@ -121,14 +110,7 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 			itemView.tv_qxkc.setVisibility(View.VISIBLE);
 			itemView.tv_qd.setVisibility(View.VISIBLE);
 			itemView.tv_kcpj.setVisibility(View.GONE);
-			/**0未建群    1已建群*/
-			if(entity.groupStatus.equals("0")){
-				itemView.tv_jq.setVisibility(View.VISIBLE);
-				itemView.tv_yjq.setVisibility(View.GONE);
-			}else if(entity.groupStatus.equals("1")){
-				itemView.tv_jq.setVisibility(View.GONE);
-				itemView.tv_yjq.setVisibility(View.VISIBLE);
-			}
+
 		}else{
 			if(entity.classStatus.equals("3")){
 				itemView.tv_mycourse_Endstates.setTextColor(context.getResources().getColor(R.color.white));
@@ -137,9 +119,7 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 				itemView.tv_qxkc.setVisibility(View.GONE);
 				itemView.tv_qd.setVisibility(View.GONE);
 				itemView.tv_kcpj.setVisibility(View.VISIBLE);
-				itemView.tv_jq.setVisibility(View.GONE);
-				itemView.tv_yjq.setVisibility(View.GONE);//已建群
-				
+
 			}else if(entity.classStatus.equals("2")){
 				itemView.tv_mycourse_Endstates.setTextColor(context.getResources().getColor(R.color.white));
 				itemView.tv_mycourse_Endstates.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.collection_lab_two));
@@ -147,14 +127,7 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 				itemView.tv_qxkc.setVisibility(View.GONE);
 				itemView.tv_qd.setVisibility(View.VISIBLE);
 				itemView.tv_kcpj.setVisibility(View.GONE);
-				/**0未建群    1已建群*/
-				if(entity.groupStatus.equals("0")){
-					itemView.tv_jq.setVisibility(View.VISIBLE);
-					itemView.tv_yjq.setVisibility(View.GONE);
-				}else if(entity.groupStatus.equals("1")){
-					itemView.tv_jq.setVisibility(View.GONE);
-					itemView.tv_yjq.setVisibility(View.VISIBLE);
-				}
+
 			}else if(entity.classStatus.equals("1")){
 				itemView.tv_mycourse_Endstates.setTextColor(context.getResources().getColor(R.color.white));
 				itemView.tv_mycourse_Endstates.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.collection_lab));
@@ -162,14 +135,6 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 				itemView.tv_qxkc.setVisibility(View.VISIBLE);
 				itemView.tv_qd.setVisibility(View.VISIBLE);
 				itemView.tv_kcpj.setVisibility(View.GONE);
-				/**0未建群    1已建群*/
-				if(entity.groupStatus.equals("0")){
-					itemView.tv_jq.setVisibility(View.VISIBLE);
-					itemView.tv_yjq.setVisibility(View.GONE);
-				}else if(entity.groupStatus.equals("1")){
-					itemView.tv_jq.setVisibility(View.GONE);
-					itemView.tv_yjq.setVisibility(View.VISIBLE);
-				}
 			}
 			
 		}
@@ -188,16 +153,6 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 				context.startActivity(intent);
 			}
 		});
-		
-		//建群
-		itemView.tv_jq.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				onSeckillClick.onSeckillClick(position,1);
-			}
-		});
-		
 		//取消课程
 		itemView.tv_qxkc.setOnClickListener(new OnClickListener() {
 			@Override
@@ -220,15 +175,7 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 				onSeckillClick.onSeckillClick(position,4);
 			}
 		});
-		
-		itemView.tv_yjq.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+
 		return convertView;
 	}
 	
@@ -238,7 +185,7 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 	class ItemView{
 		private TextView tv_mycourse_time,tv_mycourse_address,tv_mycourse_money,tv_mycourse_Endtime,
 		tv_mycourse_name,tv_mycourse_Endstates,tv_mycourse_club,
-		tv_yjq,tv_jq,tv_qd,tv_qxkc,tv_kcpj;
+		tv_qd,tv_qxkc,tv_kcpj;
 		private RoundImageViewFive img_pic;
 	
 	}

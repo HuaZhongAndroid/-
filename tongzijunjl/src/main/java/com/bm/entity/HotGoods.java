@@ -114,12 +114,7 @@ public class HotGoods implements Serializable{
 	 * 是否已买过0 未买  1 已买   如果户外和暑期大露营需要
 	 */
 	public String isBought;
-	
-	/**
-	 * 群状态   1 已建群 0 未建群
-	 */
-	public String groupStatus;
-	
+
 	public String typeName;
 	
 	/**

@@ -145,38 +145,10 @@
         android:layout_marginTop="10dip"
         android:paddingLeft="10dip" >
 
-        <TextView
-            android:id="@+id/tv_yjq"
-            style="@style/ww"
-            android:layout_width="80dip"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:background="@drawable/kc_sc"
-            android:gravity="center"
-            android:paddingBottom="8dip"
-            android:paddingTop="8dip"
-            android:text="已建群"
-            android:textColor="@color/app_dominantHue"
-            android:textSize="@dimen/text_font_15" />
 
         <LinearLayout
             style="@style/fwh"
             android:gravity="right" >
-
-            <TextView
-                android:id="@+id/tv_jq"
-                style="@style/ww"
-                android:layout_marginRight="15dip"
-                android:background="@drawable/kc_pj"
-                android:gravity="center"
-                android:paddingBottom="8dip"
-                android:paddingLeft="16dip"
-                android:paddingRight="16dip"
-                android:paddingTop="8dip"
-                android:text="建群"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_font_15" />
-
             <TextView
                 android:id="@+id/tv_qd"
                 style="@style/ww"
