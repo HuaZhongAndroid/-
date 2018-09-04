@@ -60,7 +60,7 @@ import com.lib.widget.refush.SwipyRefreshLayoutDirection;
 
 /**
  * 
- * 课程
+ * //代课
  * 
  * @author wangqiang
  * 

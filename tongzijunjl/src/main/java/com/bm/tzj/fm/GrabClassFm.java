@@ -39,7 +39,7 @@ import com.lib.tool.SharedPreferencesHelper;
 
 /**
  * 
- * 抢课
+ * //选课
  * 
  * @author wanghy
  * 
