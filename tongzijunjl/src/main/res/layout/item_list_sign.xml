@@ -51,14 +51,20 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_time"
-        style="@style/ww"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="20dip"
-        android:text="08:30"
-        android:textColor="@color/text_light"
-        android:textSize="@dimen/text_font_16" />
+        <TextView
+            android:id="@+id/tv_time"
+            style="@style/ww"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dip"
+            android:text="08:30"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_font_16" />
+        <ImageView
+            android:id="@+id/btn_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/phone" />
 
     <TextView
         android:id="@+id/tv_sign"

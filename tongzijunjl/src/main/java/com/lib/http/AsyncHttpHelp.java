@@ -153,10 +153,8 @@ public class AsyncHttpHelp {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				if (r == null
-						|| (r.status != BaseResult.STATUS_SUCCESS && r.msg == null)) {
-					callback.error(App.getInstance().getString(
-							R.string.connect_server_failed));
+				if (r == null|| (r.status != BaseResult.STATUS_SUCCESS && r.msg == null)) {
+					callback.error(App.getInstance().getString(R.string.connect_server_failed));
 				} else if (r.status != BaseResult.STATUS_SUCCESS) {
 					callback.error(r.msg);
 				} else {

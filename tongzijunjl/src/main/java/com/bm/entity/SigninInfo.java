@@ -30,6 +30,8 @@ public class SigninInfo implements Serializable{
 	public String userId;
 	
 	public String babyId;
+
+
 	
 	/**
 	 * 宝贝昵称

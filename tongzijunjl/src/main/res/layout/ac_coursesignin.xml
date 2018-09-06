@@ -146,16 +146,6 @@
                 android:textColor="@color/txt_teacher_name"
                 android:textSize="@dimen/text_font_16" />
 
-            <TextView
-                android:id="@+id/tv_wqd"
-                style="@style/ww"
-                android:layout_marginRight="35dip"
-                android:background="@drawable/kc_pj"
-                android:gravity="center"
-                android:text="签到"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_font_16" />
-
             <LinearLayout
                 android:id="@+id/ll_yqd"
                 style="@style/wwh"
@@ -221,6 +211,17 @@
                 android:layout_height="0.01dip"
                 android:layout_gravity="center_horizontal|bottom"
                 android:background="@drawable/my_line" />
+
+            <TextView
+                android:id="@+id/tv_wqd"
+                style="@style/ww"
+                android:layout_marginRight="35dip"
+                android:background="@drawable/kc_pj"
+                android:gravity="center"
+                android:text="签到"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_font_16"
+                android:visibility="gone" />
         </FrameLayout>
 
         <FrameLayout

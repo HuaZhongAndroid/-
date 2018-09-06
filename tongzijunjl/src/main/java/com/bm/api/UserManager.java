@@ -225,7 +225,7 @@ public class UserManager extends BaseApi{
 	  *
 	  *添加评论
 	  */
-	 public void getTzjcoachAddPass(Context context,List<String> imagePath,HashMap<String, String> map,final ServiceCallback<CommonResult<Model>> callback) {
+	 public void getTzjcoachAddPass(Context context,List<String> imagePath,HashMap<String, String> map,final ServiceCallback<CommonResult<String>> callback) {
 		 
 		 List<File> files = new ArrayList<File>();
 			for (int i = 0; i < imagePath.size(); i++) {

@@ -4,6 +4,8 @@ import java.util.List;
 
 import net.grobas.view.PolygonImageView;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -46,7 +48,7 @@ public class CourseSignAdapter  extends BaseAd<SigninInfo>{
 			itemView = (ItemView)convertView.getTag();
 		}
 		
-		SigninInfo entity= mList.get(position);
+		final SigninInfo entity= mList.get(position);
 		itemView.tv_name.setText(entity.babyName);
 		itemView.tv_age.setText(getNullData(entity.babyAge)==""?"年龄：0岁":"年龄："+entity.babyAge+"岁");
 		itemView.tv_time.setText(Util.toString(entity.signDate, "yyyy-MM-dd HH:mm:ss", "HH:mm"));
@@ -79,7 +81,16 @@ public class CourseSignAdapter  extends BaseAd<SigninInfo>{
 		
 		
 		ImageLoader.getInstance().displayImage(entity.avatar, itemView.img_head,App.getInstance().getHeadOptions());
-		
+
+		//打电话
+		convertView.findViewById(R.id.btn_phone).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+entity.parentPhone));
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				context.startActivity(intent);
+			}
+		});
 		
 		return convertView;
 	}

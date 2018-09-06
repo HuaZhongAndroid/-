@@ -147,7 +147,7 @@ public class SigninAc  extends BaseActivity implements OnClickListener {
 
 			}
 		});
-		getCoachIsSing();
+		//getCoachIsSing();
 		setDate();
 		
 		
@@ -177,21 +177,21 @@ public class SigninAc  extends BaseActivity implements OnClickListener {
 			public void done(int what, CommonResult<User> obj) {
 				hideProgressDialog();
 				if(null != obj.data ){
-					if(obj.data.signStatus.equals("0"))//签到状态      0 未签到  1 正常 2 迟到
-					{
-						tv_wqd.setVisibility(View.VISIBLE);
-						ll_yqd.setVisibility(View.GONE);
-					}else if(obj.data.signStatus.equals("1")){
-						tv_qd.setText("正常");
-						tv_wqd.setVisibility(View.GONE);
-						ll_yqd.setVisibility(View.VISIBLE);
-						tv_time.setText(Util.toString(obj.data.signDate, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm"));
-					}else if(obj.data.signStatus.equals("2")){
-						tv_qd.setText("迟到");
-						tv_wqd.setVisibility(View.GONE);
-						ll_yqd.setVisibility(View.VISIBLE);
-						tv_time.setText(Util.toString(obj.data.signDate, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm"));
-					}
+//					if(obj.data.signStatus.equals("0"))//签到状态      0 未签到  1 正常 2 迟到
+//					{
+//						tv_wqd.setVisibility(View.VISIBLE);
+//						ll_yqd.setVisibility(View.GONE);
+//					}else if(obj.data.signStatus.equals("1")){
+//						tv_qd.setText("正常");
+//						tv_wqd.setVisibility(View.GONE);
+//						ll_yqd.setVisibility(View.VISIBLE);
+//						tv_time.setText(Util.toString(obj.data.signDate, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm"));
+//					}else if(obj.data.signStatus.equals("2")){
+//						tv_qd.setText("迟到");
+//						tv_wqd.setVisibility(View.GONE);
+//						ll_yqd.setVisibility(View.VISIBLE);
+//						tv_time.setText(Util.toString(obj.data.signDate, "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm"));
+//					}
 				}
 			}
 		});
@@ -301,7 +301,7 @@ public class SigninAc  extends BaseActivity implements OnClickListener {
 			vPager.setCurrentItem(2);
 			break;
 		case R.id.tv_wqd:
-			UtilDialog.dialogTwoBtnContentTtile(context, "教练签到之后不能取消课程，确定要签到吗？", "取消","确定", "提示", handler, 1);
+			//UtilDialog.dialogTwoBtnContentTtile(context, "教练签到之后不能取消课程，确定要签到吗？", "取消","确定", "提示", handler, 1);
 			break;
 		default:
 			break;
