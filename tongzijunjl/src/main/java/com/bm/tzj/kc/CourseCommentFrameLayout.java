@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.alibaba.sdk.android.oss.ClientConfiguration;
 import com.alibaba.sdk.android.oss.ClientException;
@@ -27,13 +28,16 @@ import com.alibaba.sdk.android.oss.callback.OSSProgressCallback;
 import com.alibaba.sdk.android.oss.common.OSSLog;
 import com.alibaba.sdk.android.oss.common.auth.OSSAuthCredentialsProvider;
 import com.alibaba.sdk.android.oss.common.auth.OSSCredentialProvider;
+import com.alibaba.sdk.android.oss.common.auth.OSSPlainTextAKSKCredentialProvider;
 import com.alibaba.sdk.android.oss.common.auth.OSSStsTokenCredentialProvider;
 import com.alibaba.sdk.android.oss.internal.OSSAsyncTask;
 import com.alibaba.sdk.android.oss.model.PutObjectRequest;
 import com.alibaba.sdk.android.oss.model.PutObjectResult;
+import com.bm.api.BaseApi;
 import com.bm.api.UserManager;
 import com.bm.app.App;
 import com.bm.base.adapter.CourseCommentAdapter;
+import com.bm.dialog.ToastDialog;
 import com.bm.dialog.UtilDialog;
 import com.bm.entity.Model;
 import com.bm.entity.SigninInfo;
@@ -72,10 +76,12 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
     String degree, strGoodsId = "", strComment = "", strTag = "1", strMedalIds = "", babyId, goodsName;
 
 
+    String  ACCESS_ID = "LTAIYYZqtYiRDels";
+    String  ACCESS_KEY = "cJ1YOv4JAGnL6u31w1bfkBhth7A2HN";
     public static final String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
     public static final String bucketTest = "han-shan-test";
     public static final String STSSERVER = "http://softlst.com:8888/tongZiJun/api/OSSApi/getSTS";//STS 地址
-    //public static final String STSSERVER = "http://han-shan-test.oss-cn-hangzhou.aliyuncs.com";//STS 地址
+    public static final String callbackAddress = "OSSApi/callback?fkid=%s&fileName=%s";//STS 地址
 
 
     public OSS oss ;
@@ -119,17 +125,14 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
         adapter = new CourseCommentAdapter(context, list);
         lv_course_comment.setAdapter(adapter);
         adapter.setOnSeckillClick(this);
-
         oss = initOss();
     }
 
     public OSS initOss() {
-        //推荐使用OSSAuthCredentialsProvider。token过期可以及时更新
-//        OSSCredentialProvider credentialProvider = new OSSStsTokenCredentialProvider(
-//                "LTAIYYZqtYiRDels",
-//                "cJ1YOv4JAGnL6u31w1bfkBhth7A2HN",
-//                "<StsToken.SecurityToken>");
-       OSSCredentialProvider credentialProvider = new OSSAuthCredentialsProvider(STSSERVER);
+
+        //  OSSCredentialProvider credentialProvider = new OSSPlainTextAKSKCredentialProvider(ACCESS_ID, ACCESS_KEY);
+        String STSSERVER = "http://softlst.com:8888/tongZiJun/api/OSSApi/getSTS";//STS 地址
+        OSSCredentialProvider credentialProvider = new OSSAuthCredentialsProvider(STSSERVER);
         //该配置类如果不设置，会有默认配置，具体可看该类
         ClientConfiguration conf = new ClientConfiguration();
         conf.setConnectionTimeout(15 * 1000); // 连接超时，默认15秒
@@ -141,20 +144,29 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
     }
 
     ArrayList filePaths;
-    ArrayList<String> fileNames ;
-    public void upDataImage() {
+    public void upDataImage(String pkid) {
         filePaths = new ArrayList (((CourseCommentAc) context).uploadListImg);
         imageLength = filePaths.size();
-        fileNames = new ArrayList<>();
-        updataimg();
+        updataimg(pkid);
     }
     int imageIndex =0;
     int imageLength = 0 ;
-    private void updataimg(){
+    private void updataimg(final String pkid){
         String  filePath = (String) filePaths.get(imageIndex);
+        String  suffix  =  filePath.substring(filePath.lastIndexOf("."));
         String uuid = UUID.randomUUID().toString();
-        String imageName = uuid + ".jpg";
+        String imageName = "kencj"+uuid +suffix;
         PutObjectRequest put = new PutObjectRequest(bucketTest, imageName, filePath);
+        final String imgPath = String.format(callbackAddress,  pkid,imageName);
+//        put.setCallbackParam(new HashMap<String, String>() {
+//            {
+//                Log.d("callbackUrl", "callbackUrl start" + imgPath);
+//                put("callbackUrl", imgPath);
+//                //callbackBody可以自定义传入的信息
+//                put("callbackBody", "{}");
+//                Log.d("callbackUrl", "callbackUrl end");
+//            }
+//        });
         // 异步上传时可以设置进度回调
         put.setProgressCallback(new OSSProgressCallback<PutObjectRequest>() {
             @Override
@@ -168,17 +180,13 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                 Log.d("PutObject", "UploadSuccess");
                 Log.d("ETag", result.getETag());
                 Log.d("RequestId", result.getRequestId());
+                updataCallbackAddress(pkid,imgPath);
             }
             @Override
             public void onFailure(PutObjectRequest request, ClientException clientExcepion, ServiceException serviceException) {
-                // 请求异常
                 if (clientExcepion != null) {
                     // 本地异常如网络异常等
                     clientExcepion.printStackTrace();
-//                    com.alibaba.sdk.android.oss.ClientException: No value for StatusCode
-//                    org.json.JSONException: No value for StatusCode
-//                            [ErrorMessage]: No value for StatusCode
-//                    org.json.JSONException: No value for StatusCode
                 }
                 if (serviceException != null) {
                     // 服务异常
@@ -190,7 +198,29 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
             }
         });
     }
+    //上传图片成功回调服务器接口
+    public  void updataCallbackAddress(final String fkid, String url){
+        UserManager.getInstance().httpGet(context, url, new ServiceCallback<CommonResult<Object>>() {
+            @Override
+            public void done(int what, CommonResult<Object> obj) {
+                Log.e("updataCallbackAddress", "第"+imageIndex+"张上传完毕");
+                imageIndex++;
+                if (imageIndex<imageLength){
+                    updataimg(fkid);
+                }else {
+                    //上传完毕
+                    App.dialogToast(context,"上传完毕",1);
+                    Log.e("updataCallbackAddress", "全部张上传完毕");
+                }
 
+            }
+
+            @Override
+            public void error(String msg) {
+
+            }
+        });
+    }
     public void reFresh() {
         pager.setFirstPage();
         list.clear();
@@ -296,8 +326,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                     Model mInfo = (Model) msg.obj;
                     strComment = mInfo.content;
                     strTag = mInfo.degree;
-                    submitComment();
-                    //upDataImage();
+                    //submitComment();
+                    upDataImage(148+"");
                     break;
                 case 2:  //评分弹出框2   暑期大陆营
                     strMedalIds = "";
@@ -321,6 +351,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
 
 
 
+
+
     /**
      * 添加评论
      */
@@ -339,7 +371,7 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
         map.put("babyId", list.get(pos).babyId);
 
         CourseCommentAc.intance.showProgressDialog();
-        UserManager.getInstance().getTzjcoachAddPass(context, ((CourseCommentAc) context).uploadListImg, map, new ServiceCallback<CommonResult<String>>() {
+        UserManager.getInstance().getTzjcoachAddPass(context, new ArrayList<String>(), map, new ServiceCallback<CommonResult<String>>() {
 
             @Override
             public void error(String msg) {
@@ -352,6 +384,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                 CourseCommentAc.intance.hideProgressDialog();
                 CourseCommentAc.intance.getDate();
                 CourseCommentAc.intance.getPassCount();
+                String fkid = obj.data;//148
+                upDataImage(fkid);
             }
         });
 

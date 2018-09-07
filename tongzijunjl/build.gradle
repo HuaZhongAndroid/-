@@ -50,8 +50,8 @@ dependencies {
     compile project(':tZJlib')
     compile project(':easeUIT')
     //阿里云图片服务器
-   // compile project(':oss-android-sdk')
-    compile 'com.aliyun.dpa:oss-android-sdk:+'
+    compile project(':oss-android-sdk')
+   // compile 'com.aliyun.dpa:oss-android-sdk:+'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.squareup.okio:okio:1.9.0'
 
@@ -79,5 +79,7 @@ dependencies {
 
     //图片加载框架
     compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    compile 'com.android.support:multidex:1.0.2'
 
 }

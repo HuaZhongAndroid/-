@@ -418,6 +418,7 @@ public class CourseCommentAc extends BaseCaptureActivity implements OnClickListe
 			list.get(i).isSelected = false;
 		}
 		list.get(0).isSelected = true;
+
 		gv_comm.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int pos,
@@ -443,7 +444,7 @@ public class CourseCommentAc extends BaseCaptureActivity implements OnClickListe
 						}
 					}
 				}
-				
+
 				adapter.notifyDataSetChanged();
 			}
 		});

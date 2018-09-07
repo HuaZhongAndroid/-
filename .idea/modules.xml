@@ -5,6 +5,7 @@
       <module fileurl="file://E:\AndroidWork\HanShanJl\HanShanCoach.iml" filepath="E:\AndroidWork\HanShanJl\HanShanCoach.iml" />
       <module fileurl="file://$PROJECT_DIR$/HanShanJl.iml" filepath="$PROJECT_DIR$/HanShanJl.iml" />
       <module fileurl="file://$PROJECT_DIR$/easeUIT/easeUIT.iml" filepath="$PROJECT_DIR$/easeUIT/easeUIT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oss-android-sdk/oss-android-sdk.iml" filepath="$PROJECT_DIR$/oss-android-sdk/oss-android-sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/tZJlib/tZJlib.iml" filepath="$PROJECT_DIR$/tZJlib/tZJlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/tongzijunjl/tongzijunjl.iml" filepath="$PROJECT_DIR$/tongzijunjl/tongzijunjl.iml" />
     </modules>

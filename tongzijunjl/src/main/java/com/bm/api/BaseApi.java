@@ -196,6 +196,11 @@ public class BaseApi {
 	 *添加评论
 	 */
 	public static final String API_TZJCOACH_ADDPASS="tzjcoach/addPass";
+	/**
+	 *
+	 *添加评论
+	 */
+	public static final String API_CALLBACK_ADDPASS="/OSSApi/callback?fkid=%d&fileName=%s";
 	
 	
 	/**

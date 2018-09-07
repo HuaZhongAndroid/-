@@ -239,6 +239,9 @@ public class UserManager extends BaseApi{
 
 
 
+
+
+
 	 /**
 	  *
 	  *
@@ -453,14 +456,11 @@ public class UserManager extends BaseApi{
 		get(API_USER_LOGIN, loginPost, callback);
 	}
 
-	      *//**
-	      * 获取用户信息
-	      * @param post
-	      * @param callback
-	      *//*
 	      */
 
 
-
+	public void httpGet(Context context,String url,final ServiceCallback<CommonResult<Object>> callback) {
+		AsyncHttpHelp.getInstance().httpGet(context, url, null, callback);
+	}
 
 }
