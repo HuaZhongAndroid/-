@@ -8,6 +8,7 @@ import java.util.UUID;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -81,7 +82,7 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
     public static final String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
     public static final String bucketTest = "han-shan-test";
     public static final String STSSERVER = "http://softlst.com:8888/tongZiJun/api/OSSApi/getSTS";//STS 地址
-    public static final String callbackAddress = "OSSApi/callback?fkid=%s&fileName=%s";//STS 地址
+    public static final String callbackAddress = "OSSApi/callback?fkid=%s&filename=%s";//STS 地址
 
 
     public OSS oss ;
@@ -147,7 +148,16 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
     public void upDataImage(String pkid) {
         filePaths = new ArrayList (((CourseCommentAc) context).uploadListImg);
         imageLength = filePaths.size();
-        updataimg(pkid);
+        Log.d("updataCallbackAddress","准备上传第"+imageIndex+"张");
+        CourseCommentAc.intance.showProgressDialog();
+        try {
+            if(imageLength>0)
+            updataimg(pkid);
+        }catch (Exception e){
+            e.printStackTrace();
+            App.toast("上传失败");
+            CourseCommentAc.intance.hideProgressDialog();
+        }
     }
     int imageIndex =0;
     int imageLength = 0 ;
@@ -180,10 +190,14 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                 Log.d("PutObject", "UploadSuccess");
                 Log.d("ETag", result.getETag());
                 Log.d("RequestId", result.getRequestId());
+                Log.d("updataCallbackAddress","上传成功");
                 updataCallbackAddress(pkid,imgPath);
             }
             @Override
             public void onFailure(PutObjectRequest request, ClientException clientExcepion, ServiceException serviceException) {
+                Log.d("updataCallbackAddress","上传失败");
+                App.toast("上传失败");
+                CourseCommentAc.intance.hideProgressDialog();
                 if (clientExcepion != null) {
                     // 本地异常如网络异常等
                     clientExcepion.printStackTrace();
@@ -200,24 +214,39 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
     }
     //上传图片成功回调服务器接口
     public  void updataCallbackAddress(final String fkid, String url){
+        Log.d("updataCallbackAddress","开始回调"+url);
         UserManager.getInstance().httpGet(context, url, new ServiceCallback<CommonResult<Object>>() {
             @Override
             public void done(int what, CommonResult<Object> obj) {
+                Log.e("updataCallbackAddress", "回调返回值："+obj.data.toString());
                 Log.e("updataCallbackAddress", "第"+imageIndex+"张上传完毕");
-                imageIndex++;
-                if (imageIndex<imageLength){
-                    updataimg(fkid);
-                }else {
-                    //上传完毕
-                    App.dialogToast(context,"上传完毕",1);
-                    Log.e("updataCallbackAddress", "全部张上传完毕");
-                }
-
+               if(obj.status==1){
+                   imageIndex++;
+                   Log.d("updataCallbackAddress","回调成功"+url);
+                   if (imageIndex<imageLength){
+                       Log.d("updataCallbackAddress","准备上传第"+imageIndex+"张");
+                       updataimg(fkid);
+                   }else {
+                       //上传完毕
+                       Log.e("updataCallbackAddress", "全部张上传完毕");
+                       Looper.prepare();
+                       App.toast("上传成功");
+                       CourseCommentAc.intance.hideProgressDialog();
+                       //Toast.makeText(context,"上传成功",Toast.LENGTH_SHORT).show();
+                       Looper.loop();
+                   }
+               }else {
+                   error(obj.status+":"+obj.msg);
+               }
             }
 
             @Override
             public void error(String msg) {
-
+                Log.e("updataCallbackAddress", "回调失败:"+msg);
+                CourseCommentAc.intance.hideProgressDialog();
+                Looper.prepare();
+                App.toast("上传失败");
+                Looper.loop();
             }
         });
     }
@@ -326,8 +355,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                     Model mInfo = (Model) msg.obj;
                     strComment = mInfo.content;
                     strTag = mInfo.degree;
-                    //submitComment();
-                    upDataImage(148+"");
+                    submitComment();
+                    //upDataImage(148+"");
                     break;
                 case 2:  //评分弹出框2   暑期大陆营
                     strMedalIds = "";
@@ -377,6 +406,7 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
             public void error(String msg) {
                 CourseCommentAc.intance.dialogToast(msg);
                 CourseCommentAc.intance.hideProgressDialog();
+                App.toast("评论失败");
             }
 
             @Override
@@ -385,6 +415,7 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                 CourseCommentAc.intance.getDate();
                 CourseCommentAc.intance.getPassCount();
                 String fkid = obj.data;//148
+                App.toast("评论成功，正在上传图片");
                 upDataImage(fkid);
             }
         });
