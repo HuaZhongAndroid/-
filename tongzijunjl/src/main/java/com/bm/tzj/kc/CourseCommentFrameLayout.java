@@ -77,12 +77,10 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
     String degree, strGoodsId = "", strComment = "", strTag = "1", strMedalIds = "", babyId, goodsName;
 
 
-    String  ACCESS_ID = "LTAIYYZqtYiRDels";
-    String  ACCESS_KEY = "cJ1YOv4JAGnL6u31w1bfkBhth7A2HN";
     public static final String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
     public static final String bucketTest = "han-shan-test";
     public static final String STSSERVER = "http://softlst.com:8888/tongZiJun/api/OSSApi/getSTS";//STS 地址
-    public static final String callbackAddress = "OSSApi/callback?fkid=%s&filename=%s";//STS 地址
+    public static final String callbackAddress = "OSSApi/callback?fkid=%s&filename=%s";//
 
 
     public OSS oss ;
