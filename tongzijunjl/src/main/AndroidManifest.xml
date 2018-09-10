@@ -559,7 +559,7 @@
         <!-- meta-data需要写在application中 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="Iu8inY759lrRbqMzNRrRpvj8" />
+            android:value="YoOyu6z4sserRaj7P1Tn9tPAjKE9TG0Q" />
 
        
     </application>
