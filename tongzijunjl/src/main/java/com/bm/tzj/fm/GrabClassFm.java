@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.bm.app.App;
 import com.bm.tzj.caledar.CaledarAc;
 import com.bm.tzj.city.Activity01;
+import com.bm.tzj.city.Activity02;
 import com.bm.tzj.city.City;
 import com.bm.tzj.mine.GrabClassListFrameLayout;
 import com.bm.tzjjl.activity.MainAc;
@@ -164,7 +165,7 @@ public class GrabClassFm extends Fragment implements OnClickListener,OnTabActivi
 				tv_location.setText(city.cityName.substring(0,city.cityName.length()-1));
 			}
 		}else{
-			tv_location.setText("西安市");//城市名称
+			tv_location.setText("西安");//城市名称
 		}
 		
 		tv_time.setText(_year+"年"+(_month + 1)+"月"+_day+"日");

@@ -229,9 +229,9 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 //		city_lists = getCityList();
 //		allCity_lists.addAll(city_lists);
 		getAllCityList();
-		
-		
-		
+
+
+
 	}
 	/**
 	 * 获取最近访问城市
@@ -685,10 +685,12 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 					public void onItemClick(AdapterView<?> parent, View view,
 							int position, long id) {
 
-						updateLastCity(city_hot.get(position).name);
-//						Toast.makeText(getApplicationContext(),
-//								city_hot.get(position).getName(),
-//								Toast.LENGTH_SHORT).show();
+						Intent intent = new Intent();
+						intent.putExtra("cityName", city_hot.get(position).name);
+						intent.setClass(context, MainAc.class);
+						setResult(5, intent);
+						finish();
+						hideProgressDialog();
 
 					}
 				});

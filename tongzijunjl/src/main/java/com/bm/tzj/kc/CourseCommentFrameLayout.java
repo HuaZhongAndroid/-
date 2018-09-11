@@ -163,8 +163,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
         String  filePath = (String) filePaths.get(imageIndex);
         String  suffix  =  filePath.substring(filePath.lastIndexOf("."));
         String uuid = UUID.randomUUID().toString();
-        String imageName = "kencj"+uuid +suffix;
-        PutObjectRequest put = new PutObjectRequest(bucketTest, imageName, filePath);
+        String imageName = uuid +suffix;
+        PutObjectRequest put = new PutObjectRequest(bucketTest, "img/user/growth/"+imageName, filePath);
         final String imgPath = String.format(callbackAddress,  pkid,imageName);
 //        put.setCallbackParam(new HashMap<String, String>() {
 //            {
@@ -409,7 +409,7 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
 
             @Override
             public void done(int what, CommonResult<String> obj) {
-                CourseCommentAc.intance.hideProgressDialog();
+                //CourseCommentAc.intance.hideProgressDialog();
                 CourseCommentAc.intance.getDate();
                 CourseCommentAc.intance.getPassCount();
                 String fkid = obj.data;//148

@@ -117,11 +117,11 @@ GrabClassAdapter.OnSeckillClick,OnRefreshListener {
 		City city = App.getInstance().getCityCode();
 		
 		if(null!=city&&!TextUtils.isEmpty(city.cityName)){
-			map.put("cityName", city.cityName);//城市名称
+			map.put("cityName", city.cityName.contains("市")?city.cityName.replace("市",""):city.cityName);//城市名称
 			map.put("lon", city.lng);//经度
 			map.put("lat",  city.lat);//纬度
 		}else{
-			map.put("cityName", "西安市");//城市名称
+			map.put("cityName", "西安");//城市名称
 		}
 		map.put("regulationSort", state);//排序规则    1 离我最近 2 最新发布 3 价格最高 4 名额最多
 		map.put("classTime", strClassTime);//上课时间  默认是当天
