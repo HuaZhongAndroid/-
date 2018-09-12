@@ -129,7 +129,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 		});
 //		letterListView = (MyLetterListView) findViewById(R.id.MyLetterListView01);
 //		letterListView.setOnTouchingLetterChangedListener(new LetterListViewListener());
-		
+
 		alphaIndexer = new HashMap<String, Integer>();
 		handler = new Handler();
 		overlayThread = new OverlayThread();
@@ -140,9 +140,9 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				if (position >= 4) {
-				
+
 					updateLastCity(allCity_lists.get(position).name);
-					
+
 //					Toast.makeText(getApplicationContext(),
 //							allCity_lists.get(position).getName(),
 //							Toast.LENGTH_SHORT).show();
@@ -160,25 +160,27 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				updateLastCity(city_result.get(position).name);
-					
+
 //				Toast.makeText(getApplicationContext(),
 //						city_result.get(position).getName(), Toast.LENGTH_SHORT)
 //						.show();
 			}
 		});
-		//initOverlay();
 		cityInit();
-//		hotCityInit();
-		getHotCityList();
-//		hisCityInit();
-		getLastCity();
-		
-
 		mLocationClient = new LocationClient(this.getApplicationContext());
 		mMyLocationListener = new MyLocationListener();
 		mLocationClient.registerLocationListener(mMyLocationListener);
 		InitLocation();
 		mLocationClient.start();
+
+		//initOverlay();
+
+//		hotCityInit();
+
+//		hisCityInit();
+		getHotCityList();
+		getLastCity();
+
 	}
 
 	public void InsertCity(String name) {
@@ -219,7 +221,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 		allCity_lists.add(city);
 		city = new City("热门", "1"); // 热门城市
 		allCity_lists.add(city);
-		
+
 //		city = new City("最近", "1"); // 最近访问的城市
 //		allCity_lists.add(city);
 //		city = new City("热门", "2"); // 热门城市
@@ -228,7 +230,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 //		allCity_lists.add(city);
 //		city_lists = getCityList();
 //		allCity_lists.addAll(city_lists);
-		getAllCityList();
+		//getAllCityList();
 
 
 
@@ -245,13 +247,13 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 			map.put("userId","0");
 		}
 		UserManager.getInstance().getLastCity(Activity01.this, map, new ServiceCallback<StringResult>() {
-			
+
 			@Override
 			public void error(String msg) {
 				dialogToast(msg);
 				hideProgressDialog();
 			}
-			
+
 			@Override
 			public void done(int what, StringResult obj) {
 				if(null!=obj.data){
@@ -272,16 +274,16 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 		}else{
 			map.put("userId","0");
 		}
-		
+
 		map.put("regionName", regionName);
 		UserManager.getInstance().updateLastCity(Activity01.this, map, new ServiceCallback<StringResult>() {
-			
+
 			@Override
 			public void error(String msg) {
 				dialogToast(msg);
 				hideProgressDialog();
 			}
-			
+
 			@Override
 			public void done(int what, StringResult obj) {
 				Intent intent = new Intent();
@@ -306,21 +308,23 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 		showProgressDialog();
 		HashMap<String, String> map = new HashMap<String, String>();
 		UserManager.getInstance().getTzjtrendHotregion(Activity01.this, map, new ServiceCallback<CommonListResult<City>>() {
-			
+
 			@Override
 			public void error(String msg) {
 				dialogToast(msg);
 				hideProgressDialog();
 			}
-			
+
 			@Override
 			public void done(int what, CommonListResult<City> obj) {
+				hideProgressDialog();
 				if(null!=obj.data){
 					for (int i = 0; i < obj.data.size(); i++) {
 						city_hot.add(new City(obj.data.get(i).regionName, obj.data.get(i).regionId,""));
 					}
-					hideProgressDialog();
+					//city_hot = obj.data;
 				}
+				setAdapter(allCity_lists, city_hot, city_history);
 			}
 		});
 	}
@@ -370,13 +374,13 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 		showProgressDialog();
 		HashMap<String, String> map = new HashMap<String, String>();
 		UserManager.getInstance().getTzjtrendTrendregion(Activity01.this, map, new ServiceCallback<CommonListResult<AllCity>>() {
-			
+
 			@Override
 			public void error(String msg) {
 				dialogToast(msg);
 				hideProgressDialog();
 			}
-			
+
 			@SuppressWarnings("unchecked")
 			@Override
 			public void done(int what, CommonListResult<AllCity> obj) {
@@ -387,11 +391,11 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 							City city=new City();
 							city.pinyi=allCities.get(i).category;
 							city.name=allCities.get(i).regionName.get(j);
-							
+
 //							city_lists.add(city);
 						}
 					}
-					
+
 //					Collections.sort(city_lists, comparator);
 //					allCity_lists.addAll(city_lists);
 					setAdapter(allCity_lists, city_hot, city_history);
@@ -649,8 +653,8 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 //					city.setText("重新选择");
 					pbLocate.setVisibility(View.GONE);
 				}
-			} 
-			
+			}
+
 //			else if (viewType == 1) { // 最近访问城市
 //				convertView = inflater.inflate(R.layout.recent_city, null);
 //				GridView rencentCity = (GridView) convertView
@@ -662,7 +666,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 //					@Override
 //					public void onItemClick(AdapterView<?> parent, View view,
 //							int position, long id) {
-//						
+//
 //						updateLastCity(city_history.get(position));
 ////						Toast.makeText(getApplicationContext(),
 ////								city_history.get(position), Toast.LENGTH_SHORT)
@@ -674,7 +678,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 //						.findViewById(R.id.recentHint);
 //				recentHint.setText("最近访问的城市");
 //			}
-			
+
 			else if (viewType == 1) {
 				convertView = inflater.inflate(R.layout.recent_city, null);
 				GridView hotCity = (GridView) convertView
@@ -684,47 +688,47 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 					@Override
 					public void onItemClick(AdapterView<?> parent, View view,
 							int position, long id) {
-
-						Intent intent = new Intent();
-						intent.putExtra("cityName", city_hot.get(position).name);
-						intent.setClass(context, MainAc.class);
-						setResult(5, intent);
-						finish();
-						hideProgressDialog();
-
+//						Intent intent = new Intent();
+//						intent.putExtra("cityName", city_hot.get(position).name);
+//						intent.setClass(context, MainAc.class);
+//						setResult(5, intent);
+//						finish();
+//						hideProgressDialog();
+						updateLastCity(city_hot.get(position).getName());
 					}
 				});
 				hotCity.setAdapter(new HotCityAdapter(context, this.hotList));
 				TextView hotHint = (TextView) convertView
 						.findViewById(R.id.recentHint);
 				hotHint.setText("已开通城市");//热门城市
-			} else if (viewType == 3) {
-				convertView = inflater.inflate(R.layout.total_item, null);
-			} else {
-				if (convertView == null) {
-					convertView = inflater.inflate(R.layout.list_item, null);
-					holder = new ViewHolder();
-					holder.alpha = (TextView) convertView
-							.findViewById(R.id.alpha);
-					holder.name = (TextView) convertView
-							.findViewById(R.id.name);
-					convertView.setTag(holder);
-				} else {
-					holder = (ViewHolder) convertView.getTag();
-				}
-				if (position >= 1) {
-					holder.name.setText(list.get(position).name);
-					String currentStr = getAlpha(list.get(position).getPinyi());
-					String previewStr = (position - 1) >= 0 ? getAlpha(list
-							.get(position - 1).getPinyi()) : " ";
-					if (!previewStr.equals(currentStr)) {
-						holder.alpha.setVisibility(View.VISIBLE);
-						holder.alpha.setText(currentStr);
-					} else {
-						holder.alpha.setVisibility(View.GONE);
-					}
-				}
 			}
+//			else if (viewType == 3) {
+//				convertView = inflater.inflate(R.layout.total_item, null);
+//			} else {
+//				if (convertView == null) {
+//					convertView = inflater.inflate(R.layout.list_item, null);
+//					holder = new ViewHolder();
+//					holder.alpha = (TextView) convertView
+//							.findViewById(R.id.alpha);
+//					holder.name = (TextView) convertView
+//							.findViewById(R.id.name);
+//					convertView.setTag(holder);
+//				} else {
+//					holder = (ViewHolder) convertView.getTag();
+//				}
+//				if (position >= 1) {
+//					holder.name.setText(list.get(position).name);
+//					String currentStr = getAlpha(list.get(position).getPinyi());
+//					String previewStr = (position - 1) >= 0 ? getAlpha(list
+//							.get(position - 1).getPinyi()) : " ";
+//					if (!previewStr.equals(currentStr)) {
+//						holder.alpha.setVisibility(View.VISIBLE);
+//						holder.alpha.setText(currentStr);
+//					} else {
+//						holder.alpha.setVisibility(View.GONE);
+//					}
+//				}
+//			}
 			return convertView;
 		}
 
