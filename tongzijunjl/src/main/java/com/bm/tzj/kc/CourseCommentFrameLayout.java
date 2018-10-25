@@ -155,6 +155,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
             e.printStackTrace();
             App.toast("上传失败");
             CourseCommentAc.intance.hideProgressDialog();
+            handler.sendEmptyMessage(400);
+
         }
     }
     int imageIndex =0;
@@ -207,6 +209,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                     Log.e("HostId", serviceException.getHostId());
                     Log.e("RawMessage", serviceException.getRawMessage());
                 }
+
+                handler.sendEmptyMessage(400);
             }
         });
     }
@@ -232,6 +236,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                        CourseCommentAc.intance.hideProgressDialog();
                        //Toast.makeText(context,"上传成功",Toast.LENGTH_SHORT).show();
                        Looper.loop();
+
+
                    }
                }else {
                    error(obj.status+":"+obj.msg);
@@ -245,6 +251,7 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                 Looper.prepare();
                 App.toast("上传失败");
                 Looper.loop();
+                handler.sendEmptyMessage(400);
             }
         });
     }
@@ -368,6 +375,13 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                     submitComment();
                     UtilDialog.listRefu.clear();  //清除之前选中的数据
                     break;
+                case 400:
+                    UtilDialog.dialogTwoBtnResultCode(context,"上传失败，是否继续重新上传","取消","继续上传",handler,401);
+                    break;
+                case 401:
+                    //UtilDialog.dialogTwoBtnResultCode(context,"上传失败，是否继续重新上传","取消","继续上传",handler,401);
+                    upDataImage(fkid);
+                    break;
             }
             ;
         }
@@ -379,7 +393,7 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
 
 
 
-
+    String fkid;
     /**
      * 添加评论
      */
@@ -412,7 +426,7 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                 //CourseCommentAc.intance.hideProgressDialog();
                 CourseCommentAc.intance.getDate();
                 CourseCommentAc.intance.getPassCount();
-                String fkid = obj.data;//148
+                fkid = obj.data;//148
                 App.toast("评论成功，正在上传图片");
                 upDataImage(fkid);
             }

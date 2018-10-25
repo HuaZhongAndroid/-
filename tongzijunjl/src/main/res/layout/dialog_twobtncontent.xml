@@ -11,6 +11,8 @@
         android:layout_width="230dip"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@drawable/shape_white_dialog"
+
         android:layout_gravity="center_horizontal"
           >
 
