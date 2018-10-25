@@ -230,6 +230,8 @@ public class CourseCommentFrameLayout extends FrameLayout implements CourseComme
                        updataimg(fkid);
                    }else {
                        //上传完毕
+                        imageIndex =0;
+                        imageLength = 0 ;
                        Log.e("updataCallbackAddress", "全部张上传完毕");
                        Looper.prepare();
                        App.toast("上传成功");
