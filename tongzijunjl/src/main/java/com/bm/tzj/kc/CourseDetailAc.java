@@ -208,12 +208,12 @@ public class CourseDetailAc extends BaseActivity implements OnClickListener {
 //		// 教练头像
 //		ImageLoader.getInstance().displayImage("http://xbyx.cersp.com/xxzy/UploadFiles_7930/200808/20080810110053944.jpg", img_head,App.getInstance().getHeadOptions());
 
-		if(degree.equals("3")){
-			tv_category.setText("城市营地");// 课程分类
+		if(degree.equals("1")){
+			tv_category.setText("闹腾生存适能训练中心");// 课程分类
 		}else if(degree.equals("2")){
-			tv_category.setText("暑期大露营");// 课程分类
+			tv_category.setText("室内体验馆");// 课程分类
 		}else{
-			tv_category.setText("户外基地");// 课程分类
+			tv_category.setText("城市营地");// 课程分类
 		}
 	}
 

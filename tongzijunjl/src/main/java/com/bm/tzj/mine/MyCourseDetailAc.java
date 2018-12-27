@@ -161,11 +161,11 @@ public class MyCourseDetailAc extends BaseActivity implements OnClickListener {
 		}
 		
 		if(data.goodsType.equals("1")){
-			tv_category.setText("城市营地");// 课程分类
+			tv_category.setText("闹腾生存适能训练中心");// 课程分类
 			ll_address.setVisibility(View.VISIBLE);
 			tv_time.setText(Util.toString(getNullData(data.startTime),"yyyy-MM-dd HH:mm:ss","yyyy-MM-dd HH:mm")+"—"+Util.toString(getNullData(data.endTime),"yyyy-MM-dd HH:mm:ss","HH:mm"));//时间
 		}else if(data.goodsType.equals("2")){
-			tv_category.setText("暑期大露营");// 课程分类
+			tv_category.setText("室内体验馆");// 课程分类
 			tv_time.setText(Util.toString(getNullData(data.startTime),"yyyy-MM-dd HH:mm:ss","yyyy-MM-dd")+"—"+Util.toString(getNullData(data.endTime),"yyyy-MM-dd HH:mm:ss","MM-dd"));//时间
 			ll_address.setVisibility(View.GONE);
 		}else{

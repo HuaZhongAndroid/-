@@ -69,10 +69,10 @@ public class MyCourseAdapter  extends BaseAd<HotGoods>{
 //		itemView.tv_mycourse_club.setText(getNullData("城市营地"));//城市营地
 		if(entity.goodsType.equals("1")){
 			itemView.tv_mycourse_address.setText(getNullData(entity.storeName));//门店地址
-			itemView.tv_mycourse_club.setText("闹腾生存适能");// 课程分类
+			itemView.tv_mycourse_club.setText("闹腾生存适能训练中心");// 课程分类
 //			itemView.tv_mycourse_address.setVisibility(View.GONE);
 		}else if(entity.goodsType.equals("2")){
-			itemView.tv_mycourse_club.setText("君昂童子军乐园");// 课程分类
+			itemView.tv_mycourse_club.setText("室内体验馆");// 课程分类
 //			itemView.tv_mycourse_address.setVisibility(View.VISIBLE);
 			itemView.tv_mycourse_address.setText(getNullData(entity.storeName));//地址
 		}else if(entity.goodsType.equals("3")){

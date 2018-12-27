@@ -45,10 +45,10 @@ public class CourseAdapter  extends BaseAd<Model>{
 		Model entity= mList.get(position);
 		//1 户外俱乐部  2暑期大露营   3城市营地
 		if(entity.degree.equals("1")){
-			itemView.tv_category.setText("户外基地");
+			itemView.tv_category.setText("闹腾生存适能训练中心");
 			itemView.tv_mycourse_address.setVisibility(View.GONE);
 		}else if(entity.degree.equals("2")){
-			itemView.tv_category.setText("暑期大露营");
+			itemView.tv_category.setText("室内体验馆");
 			itemView.tv_mycourse_address.setVisibility(View.GONE);
 		}else{
 			itemView.tv_mycourse_address.setVisibility(View.VISIBLE);
