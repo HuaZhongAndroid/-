@@ -12,7 +12,7 @@ public class BaseApi {
 
 	//public static final String API_HOST = "http://v250.tzj.softlst.com:8888";//正式服务器
 	public static final String API_HOST = "http://59.110.62.10:8888";//测试服务器
-	//public static final String API_HOST = "http://192.168.0.107:8888";//测试服务器
+	//public static final String API_HOST = "http://192.168.1.109:8888";//测试服务器
 //	public static final String API_HOST = "http://47.93.84.236:8888";//测试服务器
 
 	public static String API_URL_PRE = API_HOST + "/tongZiJun/api/";
